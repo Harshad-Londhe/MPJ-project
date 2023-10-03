@@ -37,7 +37,7 @@ public class RegisterServlet extends HttpServlet {
 		}
 		
 		else {
-			RequestDispatcher dis2 = request.getRequestDispatcher("unsuccess.jsp");
+			RequestDispatcher dis2 = request.getRequestDispatcher("login.jsp");
 			dis2.forward(request, response);
 		}
 	
