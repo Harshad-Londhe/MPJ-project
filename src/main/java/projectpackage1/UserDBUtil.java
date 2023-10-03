@@ -16,7 +16,7 @@ public class UserDBUtil {
 	} 
 	
 	public static boolean createUser(String uname, String email, String fname, String lname, String doB, String gender,
-			String address, int phone, String pwd) {
+			String address, String phone, String pwd) {
 		
 		boolean isSuccess = false;
 		
