@@ -1,4 +1,4 @@
-package projectpackage1;
+package com.java.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import projectpackage1.DBconnection;
 
 
 public class UserDBUtil {
@@ -69,5 +71,25 @@ public class UserDBUtil {
 		return isSuccess;
 		
 	}
+	
+//public static String logoutUser(String username) {
+//		
+//		try {
+//			con = DBconnection.getConnection();
+//			stmt = con.createStatement();
+//			
+//			String sql = "SELECT fname FROM customer WHERE userName='"+username+"";
+//			
+//			rs = stmt.executeQuery(sql);
+//			
+//			return sql;
+//				
+//			
+//		}catch(Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//		
+//	}
 
 }

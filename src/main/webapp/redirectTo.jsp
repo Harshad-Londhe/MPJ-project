@@ -3,10 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
 </head>
 <body>
-	<h1>hemlo hariyata log weno</h1>
+    <h1>Welcome, <%= session.getAttribute("username") %></h1>
+    
+    <!-- Log out button -->
+    <form action="Logout" method="GET">
+        <input type="submit" value="Log Out">
+    </form>
 </body>
 </html>
