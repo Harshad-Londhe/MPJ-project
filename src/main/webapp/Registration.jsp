@@ -244,7 +244,7 @@ footer {
 
             <!--Registration Form Begins-->
             <fieldset>
-                <form method="POST" action="reg">
+                <form method="post" action="reg">
                     <label for="Uname"><b>User Name</b></label>
                     <input type="text" placeholder="Enter User Name" name="Uname" id="Uname" required>
 
@@ -265,23 +265,24 @@ footer {
 
                     <br><br>
 
-                    <label for="DOB"><b>Age</b></label>
+                    <%--<label for="DOB"><b>Age</b></label>
                     <input type="date" placeholder="Enter DoB" name="Dob" id="DOB" required>
 
-                    <br><br>
+                    <br><br>--%>
+                    
 
-                    <label for="gender"><b>Gender</b></label>
+                    <%--<label for="gender"><b>Gender</b></label>
                     <input type="radio" name="gender" id="gender" value="Male">
                     <label for="male">Male</label>
                     <input type="radio" name="gender" id="gender" value="Female">
                     <label for="female">Female</label>
-
+					
                     <br><br>
 
                     <label for="address"><b>Address</b></label><br>
                     <textarea placeholder="Enter Address" name="address" id="address" rows="4" cols="50"></textarea>
 
-                    <br><br>
+                    <br><br>--%>
 
                     <label for="phone-number"><b>Phone Number</b></label>
                     <input type="tel" placeholder="0" name="phone-number" id="phone-number" pattern="[0-9]{10}" required>
@@ -305,12 +306,11 @@ footer {
 
                     <br><br>
 
-                    <input type="checkbox" id="accept" onclick="enableButton()"><a href="RegistrationTerms&Conditions.html">Agree Terms & Conditions.</a>
-
+                    
                     <br><br>
                     
                     <div class="FormButtons">
-                        <input type="submit" value="submit" id="subbtn" name="submit" onclick="checkDoB()" disabled>
+                        <input type="submit" value="submit" id="subbtn" name="submit">
     
                         <input type="button" value="clear" id="clear">
                     </div>
@@ -413,7 +413,7 @@ function checkDoB()
     }
 }
 
-function enableButton()
+<%--function enableButton()
 {
     var accept = document.getElementById("accept");
     var subbtn = document.getElementById("subbtn");
@@ -441,8 +441,7 @@ function enableButton()
         subbtn.disabled = true;
     }
 
-}
-
+}--%>
 
 
         </script>

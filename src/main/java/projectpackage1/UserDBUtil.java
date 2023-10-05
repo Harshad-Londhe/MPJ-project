@@ -3,35 +3,54 @@ package projectpackage1;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class UserDBUtil {
 	
-	public static List<User> validate(String userName, String password){
-		
-		ArrayList<User> us = new ArrayList<>();
-		
-		return us;
-	} 
+	private static boolean isSuccess;
 	
-	public static boolean createUser(String uname, String email, String fname, String lname, String doB, String gender,
-			String address, String phone, String pwd) {
+	private static Connection con = null;
+	private static Statement stmt = null;
+	private static ResultSet rs = null;
+	
+	public static boolean validate(String username, String password) {
+		
+		try {
+			con = DBconnection.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "SELECT * FROM customer WHERE userName='"+username+"' AND password='"+password+"'";
+			
+			rs = stmt.executeQuery(sql);
+			
+			if(rs.next()) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+				
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
+	}
+	
+	public static boolean createUser(String uname, String email, String fname, String lname, String phone, String pwd) {
 		
 		boolean isSuccess = false;
 		
-		String url = "jdbc:mysql://localhost:3306/javaproj2y1s";
-		String user = "root";
-		String pass = "1230";
-		
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			con = DBconnection.getConnection();
+			stmt = con.createStatement();
 			
-			Connection con = DriverManager.getConnection(url, user, pass);
-			Statement stmt = con.createStatement();
-			
-			String sql = "INSER INTO user VALUES(0,'"+uname+"','"+email+"', '"+lname+"', '"+doB+"', '"+gender+"', '"+address+"',"+phone+", '"+pwd+"')";
-			
+			String sql = "INSERT INTO customer VALUES(0,'"+uname+"','"+email+"', '"+fname+"', '"+lname+"', '"+phone+"', '"+pwd+"')";
 			
 			int rs = stmt.executeUpdate(sql);
 			

@@ -9,27 +9,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-@WebServlet("/RegisterServlet")
-public class RegisterServlet extends HttpServlet {
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String Uname = request.getParameter("Uname");
-		String email = request.getParameter("email");
-		String fname = request.getParameter("Fname");
-		String lname = request.getParameter("Lname");
-		String phone = request.getParameter("phone-number");
-		String pwd = request.getParameter("psw");
-		
+		String username = request.getParameter("Uname");
+		String password = request.getParameter("psw");
 		boolean isTrue;
 		
-		isTrue = UserDBUtil.createUser(Uname, email, fname, lname, phone, pwd);
+		isTrue = UserDBUtil.validate(username, password);
 		
 		if(isTrue==true) {
-			RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("redirectTo.jsp");
 			dis.forward(request, response);
 		}
 		
@@ -37,7 +31,7 @@ public class RegisterServlet extends HttpServlet {
 			RequestDispatcher dis2 = request.getRequestDispatcher("unsuccess.jsp");
 			dis2.forward(request, response);
 		}
-	
+		
 	}
 
 }
