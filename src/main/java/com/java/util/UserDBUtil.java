@@ -19,13 +19,13 @@ public class UserDBUtil {
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 	
-	public static boolean validate(String username, String password) {
+	public static boolean validate(String username, String password, String userType) {
 		
 		try {
 			con = DBconnection.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "SELECT * FROM customer WHERE userName='"+username+"' AND password='"+password+"'";
+			String sql = "SELECT * FROM "+ userType +" WHERE userName='"+username+"' AND password='"+password+"'";
 			
 			rs = stmt.executeQuery(sql);
 			
@@ -72,24 +72,5 @@ public class UserDBUtil {
 		
 	}
 	
-//public static String logoutUser(String username) {
-//		
-//		try {
-//			con = DBconnection.getConnection();
-//			stmt = con.createStatement();
-//			
-//			String sql = "SELECT fname FROM customer WHERE userName='"+username+"";
-//			
-//			rs = stmt.executeQuery(sql);
-//			
-//			return sql;
-//				
-//			
-//		}catch(Exception e) {
-//			e.printStackTrace();
-//		}
-//		
-//		
-//	}
 
 }
