@@ -21,26 +21,17 @@ public class LoginServlet extends HttpServlet {
 		
 		String username = request.getParameter("Uname");
 		String password = request.getParameter("psw");
+		String userType = request.getParameter("userType");
+		
 		boolean isTrue;
 		
-		isTrue = UserDBUtil.validate(username, password);
+		isTrue = UserDBUtil.validate(username, password, userType);
 		
 		if(isTrue==true) {
 			HttpSession session = request.getSession();
             session.setAttribute("username", username);
             
-            if ("g".equals(username.substring(0, 1))) {
-                response.sendRedirect("user1.jsp");
-            } 
-            else if ("I".equals(username.substring(0, 1))) {
-                response.sendRedirect("user2.jsp");
-            } 
-            else {
-                response.sendRedirect("user3.jsp");
-            }
-            
-            
-            //response.sendRedirect("redirectTo.jsp");
+            response.sendRedirect("redirectTo.jsp");
 		}
 		
 		else {
