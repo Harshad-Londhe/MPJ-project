@@ -66,7 +66,7 @@
 
                 <div class="right_box">
                     <p>Add medicine details</p>
-                    <form method="POST" action="addMedServlet">
+                    <form method="post" action="addMed">
                         <div class="namewrap">
                             <div class="fwrap">
                                 <label for="fname">Medicine Code</label><br>
