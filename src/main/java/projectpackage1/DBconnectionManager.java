@@ -3,11 +3,11 @@ package projectpackage1;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class DBconnection {
+public class DBconnectionManager {
 	
 	private static String url = "jdbc:mysql://localhost:3306/omos";
 	private static String user = "root";
-	private static String pass = "1230";
+	private static String pass = "2001";
 	
 	private static Connection con;
 	
@@ -24,6 +24,5 @@ public class DBconnection {
 		
 		return con;
 	}
-	
-}
 
+}
