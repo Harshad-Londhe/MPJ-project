@@ -24,4 +24,13 @@
 	<url-pattern>/reg</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>addMed</servlet-name>
+	<servlet-class>com.java.servlet.addMedServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>addMed</servlet-name>
+	<url-pattern>/addMed</url-pattern>
+</servlet-mapping>
+
 </web-app>
