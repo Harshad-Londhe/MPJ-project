@@ -51,11 +51,7 @@
 
             <p class="input-field">
                 <label for="">gender:</label>
-                <select name="gender" id="gender">
-				  <option value="Choose">Choose</option>
-				  <option value="Male">Male</option>
-				  <option value="Female">Female</option>
-				</select>
+                <input type="text" name="gender" maxlength="10" required>
             </p>
 
             <p class="input-field-address">
