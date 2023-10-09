@@ -1,6 +1,8 @@
 package projectpackage1;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,20 +15,39 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/empInsert")
 public class empInsert extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    
     public empInsert() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
+		String fname = request.getParameter("first_name");
+		String lname = request.getParameter("last_name");
+		String dob = request.getParameter("DOB");
+		String phone = request.getParameter("mobile_no");
+		String gender = request.getParameter("gender");
+		String email = request.getParameter("email");
+		String pwd = request.getParameter("password");
+		String add = request.getParameter("address");
+		String job = request.getParameter("title");
+		String join = request.getParameter("join_date");
+		String insure = request.getParameter("insure");
+		String zone = request.getParameter("zone");
+		
+		boolean isTrue;
+		
+		isTrue = EmpDBUtil.insertEmp(fname, lname, dob, phone, gender, email, pwd, add, job, join, insure, zone);
+		
+		if(isTrue == true) {
+			RequestDispatcher dis = request.getRequestDispatcher("Employee.jsp");
+			dis.forward(request, response);
+		}else {
+			RequestDispatcher dis2 = request.getRequestDispatcher("unsuccess.jsp");
+			dis2.forward(request, response);
+		}
 	}
 
 }
