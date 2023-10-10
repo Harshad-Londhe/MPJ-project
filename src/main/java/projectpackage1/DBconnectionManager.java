@@ -7,7 +7,7 @@ public class DBconnectionManager {
 	
 	private static String url = "jdbc:mysql://localhost:3306/omos";
 	private static String user = "root";
-	private static String pass = "2001";
+	private static String pass = "1230";
 	
 	private static Connection con;
 	

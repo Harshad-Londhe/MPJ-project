@@ -14,7 +14,7 @@ public class MedicineDBUtil {
 		private static Statement stmt = null;
 		private static ResultSet rs = null;
 		
-		public static boolean addMed(String code, String name, String ind, int qty, String expD, int price, String manuf) {
+		public static boolean addMed(String code, String name, String ind, int qty, String expD, double price, String manuf) {
 			
 			boolean isSuccess = false;
 			
@@ -22,7 +22,7 @@ public class MedicineDBUtil {
 				con = DBconnectionManager.getConnection();
 				stmt = con.createStatement();
 				
-				String sql = "INSERT INTO medicines VALUES(0,'"+code+"','"+name+"', '"+ind+"', '"+qty+"', '"+expD+"', '"+price+"', , '"+manuf+"' )";
+				String sql = "INSERT INTO medicine VALUES(0,'"+code+"','"+name+"', '"+ind+"', '"+qty+"', '"+expD+"', '"+price+"', '"+manuf+"' )";
 				
 				int rs = stmt.executeUpdate(sql);
 				

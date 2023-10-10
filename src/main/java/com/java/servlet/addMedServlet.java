@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.java.util.MedicineDBUtil;
 
+import com.java.util.ManagerOrderDBUtil;
 
+import com.java.util.ManagerOrderDBUtil;
 /**
  * Servlet implementation class addMedServlet
  */
@@ -28,7 +30,7 @@ public class addMedServlet extends HttpServlet {
 		String indication = request.getParameter("ind");
 		int qty = Integer.parseInt(request.getParameter("qty"));
 		String expDate = request.getParameter("exp");
-		int price = Integer.parseInt(request.getParameter("price"));
+		double price = Integer.parseInt(request.getParameter("price"));
 		String manufacturer = request.getParameter("manuf");
 		
 		
