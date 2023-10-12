@@ -93,8 +93,7 @@
                             <input type="checkbox" id="checkbox"><span class="pwdtxt">Show Password</span>
                             
                                 
-                            <input type="submit" value="Create" id="sbt" name="submit"><br>
-
+                          
                         </div>
                                   
                     </form>
