@@ -19,6 +19,10 @@
 </head>
 <body>
 
+<!---------------------------------------- SIDEBAR BEGINING ------------------------------------------>
+    <%@ include file="Sidebar.jsp" %>
+<!------------------------------------------- SIDEBAR END ------------------------------------------>
+
 <div class="main-content-employee">
 
     <!-- greetings -->
@@ -90,3 +94,9 @@
 
 
 </div> <!--main content cloase tag-->
+
+    <!---------------------- insert Javscript here ----------------------->
+    <script src="./Admin_Thilina/js/index.js"></script>
+
+</body>
+</html>
