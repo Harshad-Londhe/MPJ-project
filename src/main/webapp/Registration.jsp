@@ -70,6 +70,22 @@
             <input type="text" placeholder="Enter Last Name" name="Lname" id="Lname" required>
 
             <br><br>
+            
+            <label for="address"><b>Address:</b></label>
+    		<textarea name="address" id="address" rows="4" cols="50"></textarea>
+    		
+    		<br><br>
+            
+            <label for="gender"><b>Gender</b></label>
+            <input type="radio" name="gender" id="gender" value="Male">Male
+            <input type="radio" name="gender" id="gender" value="Female">Female
+            
+            <br><br>
+            
+            <label for="birthdate"><b>Birthdate:</b></label>
+    		<input type="date" name="birthdate" id="birthdate">
+    		
+    		<br><br>
 
             <label for="phone-number"><b>Phone Number</b></label>
             <input type="tel" placeholder="0" name="phone-number" id="phone-number" pattern="[0-9]{10}" required>

@@ -44,7 +44,7 @@ public class UserDBUtil {
 		return isSuccess;
 	}
 	
-	public static boolean createUser(String uname, String email, String fname, String lname, String phone, String pwd) {
+	public static boolean createUser(String uname, String email, String fname, String lname, String address, String gender, String birthdate,String phone, String pwd) {
 		
 		boolean isSuccess = false;
 		
@@ -52,7 +52,7 @@ public class UserDBUtil {
 			con = DBconnection.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "INSERT INTO customer VALUES(0,'"+uname+"','"+email+"', '"+fname+"', '"+lname+"', '"+phone+"', '"+pwd+"')";
+			String sql = "INSERT INTO customer VALUES(0,'"+uname+"','"+email+"', '"+fname+"', '"+lname+"', '"+address+"', '"+gender+"', '"+birthdate+"', '"+phone+"', '"+pwd+"')";
 			
 			int rs = stmt.executeUpdate(sql);
 			

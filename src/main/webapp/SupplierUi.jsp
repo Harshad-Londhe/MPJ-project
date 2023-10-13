@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 
 <!DOCTYPE html>
 <html>
@@ -33,11 +35,15 @@
 
                 <jsp:include page="/Manager/views/upperPanelRight.jsp"></jsp:include>
             </div>
+			<form action="supp" method="post">
+    			<input type="submit" value="Trigger Servlet">
+			</form>
 
             <div class="middle_panel">
                 <div class="left_box">
                     <h6>All Medicines</h6>
                     <div class="grid">
+                    
                         <table border="1">
                             <tr>
                                 <th>Order ID</th>
@@ -47,42 +53,29 @@
                                 <th>Item Description</th>
                                 <th>Order Status</th>
                             </tr>
-                            <c:forEach var="mangerOrd" items="${mOrderDetails}">
+                            <c:forEach var="MordDetails" items="${dataForSupplier}">
                                 <tr>
-                                    <td>${mangerOrd.id}</td>
-                					<td>${mangerOrd.managerID}</td>
-                					<td>${mangerOrd.orderDate}</td>
-                					<td>${mangerOrd.itemAndqty}</td>
-                					<td>${mangerOrd.itemDesc}</td>
-                					<td>${mangerOrd.orderStatus}</td>
+                                    <td>${MordDetails.id}</td>
+                					<td>${MordDetails.managerID}</td>
+                					<td>${MordDetails.orderDate}</td>
+                					<td>${MordDetails.itemAndqty}</td>
+                					<td>${MordDetails.itemDesc}</td>
+                					
+                					<td><form action="ordSt" method="post">
+                                            <input type="hidden" name="orderId" value="${MordDetails.id}">
+                                            <input type="submit" name="action" value="Accepted">
+                                            <input type="submit" name="action" value="Rejected">
+                                        </form>
+                					</td>
                 					
                                 </tr>
                             </c:forEach>
                         </table>
                     </div>
                 </div>
-
-                <div class="right_box">
-                    <p>Place the Order</p>
-                    <form action="ManOrd" method="post">
-                        <!-- Item Details -->
-                        <label for="item_name">Item with Quantity:</label>
-                        <textarea id="item&qty" name="item&qty" rows="10" cols="50" placeholder="Item___--Qty"></textarea><br><br><br>
-
-                        <label for="item_description">Order Description:</label>
-                        <textarea id="item_description" name="item_description" rows="4" cols="50"></textarea><br><br><br>
-
-                        <!-- Submit Button -->
-                        <input type="submit" value="Submit Order" name="submit">
-                    </form>
-                    
-                    <form action="ManOrd" method="post">
-    				<button type="submit" name="view">View</button>
-					</form>
-                    
-                </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+                

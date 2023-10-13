@@ -23,12 +23,16 @@ public class RegisterServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String fname = request.getParameter("Fname");
 		String lname = request.getParameter("Lname");
+		String address = request.getParameter("address");
+		String gender = request.getParameter("gender");
+		String birthdate = request.getParameter("birthdate");
 		String phone = request.getParameter("phone-number");
 		String pwd = request.getParameter("psw");
 		
+		
 		boolean isTrue;
 		
-		isTrue = UserDBUtil.createUser(Uname, email, fname, lname, phone, pwd);
+		isTrue = UserDBUtil.createUser(Uname, email, fname, lname, address, gender, birthdate, phone, pwd);
 		
 		if(isTrue==true) {
 			RequestDispatcher dis = request.getRequestDispatcher("login.jsp");

@@ -34,6 +34,36 @@
 </servlet-mapping>
 
 <servlet>
+
+	<servlet-name>orderByManager</servlet-name>
+	<servlet-class>com.java.servlet.ManagerOrderServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>orderByManager</servlet-name>
+	<url-pattern>/ManOrd</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>Supplier</servlet-name>
+	<servlet-class>com.java.servlet.SupplierServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>Supplier</servlet-name>
+	<url-pattern>/supp</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>orderStatus</servlet-name>
+	<servlet-class>com.java.servlet.UpdateOrderStatusServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>orderStatus</servlet-name>
+	<url-pattern>/ordSt</url-pattern>
+</servlet-mapping>
+
+</web-app>
+
+
 	<servlet-name>empInsert</servlet-name>
 	<servlet-class>projectpackage1.empInsert</servlet-class>
 </servlet>
@@ -43,3 +73,4 @@
 </servlet-mapping>
 
 </web-app>
+
