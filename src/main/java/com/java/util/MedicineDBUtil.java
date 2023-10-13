@@ -1,11 +1,11 @@
 package com.java.util;
 
 import java.sql.Connection;
+
 import java.sql.ResultSet;
 import java.sql.Statement;
 
 import projectpackage1.DBconnection;
-import projectpackage1.DBconnectionManager;
 
 public class MedicineDBUtil {
 		private static boolean isSuccess;
@@ -19,10 +19,10 @@ public class MedicineDBUtil {
 			boolean isSuccess = false;
 			
 			try {
-				con = DBconnectionManager.getConnection();
+				con = DBconnection.getConnection();
 				stmt = con.createStatement();
 				
-				String sql = "INSERT INTO medicine VALUES(0,'"+code+"','"+name+"', '"+ind+"', '"+qty+"', '"+expD+"', '"+price+"', '"+manuf+"' )";
+				String sql = "INSERT INTO medicines VALUES(0,'"+code+"','"+name+"', '"+ind+"', '"+qty+"', '"+expD+"', '"+price+"', '"+manuf+"' )";
 				
 				int rs = stmt.executeUpdate(sql);
 				
