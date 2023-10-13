@@ -61,12 +61,12 @@
 	<url-pattern>/ordSt</url-pattern>
 </servlet-mapping>
 
-</web-app>
 
-
+<servlet>
 	<servlet-name>empInsert</servlet-name>
 	<servlet-class>projectpackage1.empInsert</servlet-class>
 </servlet>
+
 <servlet-mapping>
 	<servlet-name>empInsert</servlet-name>
 	<url-pattern>/insertform</url-pattern>
