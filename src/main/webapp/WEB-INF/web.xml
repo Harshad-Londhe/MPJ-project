@@ -72,5 +72,48 @@
 	<url-pattern>/insertform</url-pattern>
 </servlet-mapping>
 
+
+<servlet>
+        <servlet-name>viewMedServlet</servlet-name>
+        <servlet-class>com.java.servlet.viewMedServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+        <servlet-name>viewMedServlet</servlet-name>
+        <url-pattern>/viewMedList</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.java.servlet.LogoutServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+        <servlet-name>updateMedServlet</servlet-name>
+        <servlet-class>com.java.servlet.updateMedServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+        <servlet-name>updateMedServlet</servlet-name>
+        <url-pattern>/updateMed</url-pattern>
+</servlet-mapping>
+
+<servlet>
+        <servlet-name>deleteMedServlet</servlet-name>
+        <servlet-class>com.java.servlet.deleteMedServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+        <servlet-name>deleteMedServlet</servlet-name>
+        <url-pattern>/deleteMed</url-pattern>
+</servlet-mapping>
+
+
 </web-app>
 

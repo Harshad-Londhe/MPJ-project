@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="java.util.ArrayList"%> 
+<%@page import="com.java.model.Medicine"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +35,7 @@
 
             <div class="upper_panel">
                 <div class="upper_panel_left">
-                    <h6>Manage Users</h6>
+                    <h6>Manage Medicines</h6>
                 </div>
 
                 <jsp:include page="/Manager/views/upperPanelRight.jsp"></jsp:include>
@@ -42,7 +45,8 @@
             <div class="middle_panel">
                 <div class="left_box">
                         <h6>All Medicines</h6>
-                                    
+                 
+                        
                         <div class="grid">
                             <table>
                                 <tr>
@@ -52,7 +56,41 @@
                                     <th>Quantity</th>
                                     <th>Expiry date</th>
                                     <th>Manufacturer</th>
+                                    <th>Operation</th>
                                 </tr>
+                                <c:forEach var="meds" items="${medDets}" >
+                                
+                                	<c:url value="updateMed.jsp" var="updateMed">
+                                		<c:param name="id" value= "${meds.id}"/>
+                                		<c:param name="code" value= "${meds.medCode}"/>
+                                		<c:param name="name" value= "${meds.medName}"/>
+                                		<c:param name="indi" value= "${meds.indication}"/>
+                                		<c:param name="qty" value= "${meds.qty}"/>
+                                		<c:param name="expDate" value= "${meds.expDate}"/>
+                                		<c:param name="price" value= "${meds.price}"/>
+                                		<c:param name="manuf" value= "${meds.manufacturer}"/>
+                                	</c:url>
+
+	                                <tr>
+			
+	                					<td>${meds.medCode}</td>
+	                					<td>${meds.medName}</td>
+	                					<td>${meds.indication}</td>
+	                					<td>${meds.qty}</td>
+	                					<td>${meds.expDate}</td>
+	                					<td>${meds.manufacturer}</td>
+	                					
+	                					<td> 
+                                        	<div class="opBtns">
+                                            	<button id="vwBtn"><a href="${updateMed}">View</a></button>
+                                           		<button id="dlBtn" onclick="return confirmDelete()"><a href="deleteMedServlet?id=${meds.id}">Delete</a></button>
+                                            </div>
+                                       </td>
+	                					
+	                					
+	                                </tr>
+                            	</c:forEach>
+                                
                                 
 
                             </table>
@@ -85,7 +123,7 @@
                             <label for="pwd">Expire Date</label><br>
                             <input type="text" name="exp" id="pwd" placeholder="Expiry Date" required><br>
                           	<label for="pwd">price</label><br>
-                            <input type="text" name="price" id="pwd" placeholder="Price" required><br>
+                            <input type="number" name="price" id="pwd" placeholder="Price" required><br>
                             <label for="pwd">Manufacturer</label><br>
                             <input type="text" name="manuf" id="pwd" placeholder="Manufacturer" required><br>
                             
