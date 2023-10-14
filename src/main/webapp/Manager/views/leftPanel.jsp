@@ -12,7 +12,7 @@
 	    <li><a href="ManageMedicine.jsp"> <i class="fa fa-safari" style="font-size:25px;color:white"></i>Manage Medicines</a></li>
 	    <li><a href="manageOrders.jsp"> <i class="fa fa-user" style="font-size:25px; color:white"></i>Manage Orders</a></li>
 	    <li><a href="manageEnquiry.php"> <i class="material-icons" style="font-size:25px;color:white">question_answer</i>Manage Enquiries</a></li> 
-	    <li id="logout"><a href="logout.php"> <i class="fa fa-sign-out" style="font-size:25px;color:white"></i>Log Out</a></li>
+	    <li id="logout"><a href="com.java.servlet.LogoutServlet/logout"> <i class="fa fa-sign-out" style="font-size:25px;color:white"></i>Log Out</a></li>
 	</ul>
 	            
 	            

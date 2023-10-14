@@ -8,11 +8,11 @@ public class Medicine {
 	private String indication;
 	private int qty;
 	private String expDate;
-	private int price;
+	private double price;
 	private String manufacturer;
 	
 	
-	public Medicine(int id, String medCode, String medName, String indication, int qty, String expDate, int price,
+	public Medicine(int id, String medCode, String medName, String indication, int qty, String expDate, double price,
 			String manufacturer) {
 		super();
 		this.id = id;
@@ -46,7 +46,7 @@ public class Medicine {
 	public String getExpDate() {
 		return expDate;
 	}
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 	public String getManufacturer() {
@@ -70,7 +70,7 @@ public class Medicine {
 	public void setExpDate(String expDate) {
 		this.expDate = expDate;
 	}
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	public void setManufacturer(String manufacturer) {
