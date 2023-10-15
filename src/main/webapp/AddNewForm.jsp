@@ -13,7 +13,7 @@
     <!-- insert g-icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- insert css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./Admin_Thilina/css/style.css">
 
 
 </head>
@@ -21,7 +21,7 @@
 
 <h2>Add a new Employee</h2>
 
-<form method="post" class="userform">
+<form action="insertform" method="post" class="userform">
 
     <div class="field">
 
@@ -91,10 +91,6 @@
                 <input type="text" name="zone" maxlength="20" required>
             </p>
 
-            <!-- <p class="input-field-address">
-                <label for="">&nbsp;</label>
-                <button type="submit" name="submit">Save</button>
-            </p> -->
 
             <div class="buttons">
                 <button type="submit" name="submit" class="submitbtn">
@@ -102,7 +98,7 @@
                     <span class="material-symbols-rounded">arrow_outward</span>
                 </button>
 
-                <button href="employee.html" class="cancel">
+                <button href="#" class="cancel">
                     <span class="btn-text">Cancel</span>
                     <span class="material-symbols-rounded">close</span>
                 </button>

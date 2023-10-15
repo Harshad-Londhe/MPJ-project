@@ -34,6 +34,7 @@
 </servlet-mapping>
 
 <servlet>
+
 	<servlet-name>orderByManager</servlet-name>
 	<servlet-class>com.java.servlet.ManagerOrderServlet</servlet-class>
 </servlet>
@@ -78,6 +79,17 @@
 	<url-pattern>/delMOrd</url-pattern>
 </servlet-mapping>
 
+
+</web-app>
+
+
+	<servlet-name>empInsert</servlet-name>
+	<servlet-class>projectpackage1.empInsert</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>empInsert</servlet-name>
+	<url-pattern>/insertform</url-pattern>
+</servlet-mapping>
 
 </web-app>
 
