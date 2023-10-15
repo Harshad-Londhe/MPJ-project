@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" type="text/css" href="Manager/css/manageOrders.css">
@@ -39,26 +39,46 @@
                     <h6>All Medicines</h6>
                     <div class="grid">
                         <table border="1">
-                            <tr>
-                                <th>Order ID</th>
-                                <th>Manager ID</th>
-                                <th>Order Date</th>
-                                <th>Item and Quantity</th>
-                                <th>Item Description</th>
-                                <th>Order Status</th>
-                            </tr>
-                            <c:forEach var="mangerOrd" items="${mOrderDetails}">
-                                <tr>
-                                    <td>${mangerOrd.id}</td>
-                					<td>${mangerOrd.managerID}</td>
-                					<td>${mangerOrd.orderDate}</td>
-                					<td>${mangerOrd.itemAndqty}</td>
-                					<td>${mangerOrd.itemDesc}</td>
-                					<td>${mangerOrd.orderStatus}</td>
-                					
-                                </tr>
-                            </c:forEach>
-                        </table>
+    <tr>
+        <th>Order ID</th>
+        <th>Manager ID</th>
+        <th>Order Date</th>
+        <th>Item and Quantity</th>
+        <th>Item Description</th>
+        <th>Order Status</th>
+        <th>Actions</th>
+    </tr>
+    <c:forEach var="managerOrd" items="${mOrderDetails}">
+        <tr>
+            <td>${managerOrd.id}</td>
+            <td>${managerOrd.managerID}</td>
+            <td>${managerOrd.orderDate}</td>
+            <td>${managerOrd.itemAndqty}</td>
+            <td>${managerOrd.itemDesc}</td>
+            <td>${managerOrd.orderStatus}</td>
+            <td>
+                <!-- Check the order status and conditionally display the Update or Delete button -->
+                <c:choose>
+                    <c:when test="${managerOrd.orderStatus eq 'Pending' or managerOrd.orderStatus eq 'Rejected'}">
+                        <c:url value="updateOrder.jsp" var="orderUpdate">
+                            <c:param name="id" value="${managerOrd.id}"/>
+                            <c:param name="managerID" value="${managerOrd.managerID}"/>
+                            <c:param name="orderDate" value="${managerOrd.orderDate}"/>
+                            <c:param name="itemAndqty" value="${managerOrd.itemAndqty}"/>
+                            <c:param name="itemDesc" value="${managerOrd.itemDesc}"/>
+                            <c:param name="orderStatus" value="${managerOrd.orderStatus}"/>
+                        </c:url>
+                        <a href="${orderUpdate}">
+                            <input type="button" name="update" value="Change the order">
+                        </a>
+                    </c:when>
+                   
+                </c:choose>
+            </td>
+        </tr>
+    </c:forEach>
+</table>
+
                     </div>
                 </div>
 
@@ -67,7 +87,7 @@
                     <form action="ManOrd" method="post">
                         <!-- Item Details -->
                         <label for="item_name">Item with Quantity:</label>
-                        <textarea id="item&qty" name="item&qty" rows="10" cols="50" placeholder="Item___--Qty"></textarea><br><br><br>
+                        <textarea id="itemAndqty" name="itemAndqty" rows="10" cols="50" placeholder="Item___--Qty"></textarea><br><br><br>
 
                         <label for="item_description">Order Description:</label>
                         <textarea id="item_description" name="item_description" rows="4" cols="50"></textarea><br><br><br>
@@ -77,8 +97,8 @@
                     </form>
                     
                     <form action="ManOrd" method="post">
-    				<button type="submit" name="view">View</button>
-					</form>
+                        <button type="submit" name="view">View</button>
+                    </form>
                     
                 </div>
             </div>

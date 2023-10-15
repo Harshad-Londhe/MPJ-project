@@ -21,9 +21,9 @@ public class UpdateOrderStatusServlet extends HttpServlet {
         
         if (isSuccess) {
             response.sendRedirect("manageOrders.jsp");
-        } else {
-            response.getWriter().write("Update Failed"); 
+        } 
+        else {
+            response.getWriter().write("Update Failed");
         }
 	}
-
 }
