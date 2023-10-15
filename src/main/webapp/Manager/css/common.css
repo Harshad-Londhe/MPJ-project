@@ -55,7 +55,8 @@ html,body{
     margin-top: 5px;
     list-style-type: none;
 }
-.left_panel > ul > li{
+
+.left_panel > ul> li{
     margin-bottom: 10px;
     height: 60px;
     padding: 0px 13px 0px 5px;
@@ -81,7 +82,7 @@ html,body{
     transition: 0.5s;
 }
 
-.left_panel > ul > li:hover{
+.left_panel > ul >li:hover{
     background: #0e5ba3;
 }
 
