@@ -145,7 +145,55 @@ public class ManagerOrderDBUtil {
 		
     }
 		
+    public static boolean updateOrder(int id, String itemAndqty, String itemDesc) {
+    	boolean isSuccess = false;
+    	try {
+			con = DBconnection.getConnection();
+			stmt = con.createStatement();
+			
+            String sql = "UPDATE managerorders SET itemQty = '"+itemAndqty+"' , orderDescription = '"+itemDesc+"' WHERE mOrderID = '"+id+"'";
+
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs > 0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+    	
+    	return isSuccess;
+    }
 	
+    public static boolean deleteOrder(int id) {
+    	boolean isSuccess = false;
+    	try {
+			con = DBconnection.getConnection();
+			stmt = con.createStatement();
+			
+            String sql = "DELETE FROM managerorders WHERE mOrderID = '"+id+"'";
+
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs > 0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+    	
+    	return isSuccess;
+    }
 	 
 	
 	

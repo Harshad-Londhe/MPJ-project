@@ -60,5 +60,24 @@
 	<url-pattern>/ordSt</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>updateMOrder</servlet-name>
+	<servlet-class>com.java.servlet.UpdateManagerOrderServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>updateMOrder</servlet-name>
+	<url-pattern>/updMOrd</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>deleteMOrder</servlet-name>
+	<servlet-class>com.java.servlet.DeleteOrderServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>deleteMOrder</servlet-name>
+	<url-pattern>/delMOrd</url-pattern>
+</servlet-mapping>
+
+
 </web-app>
 
