@@ -16,6 +16,15 @@
 </servlet-mapping>
 
 <servlet>
+	<servlet-name>Logout</servlet-name>
+	<servlet-class>com.java.servlet.LogoutServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>Logout</servlet-name>
+	<url-pattern>/logout</url-pattern>
+</servlet-mapping>
+
+<servlet>
 	<servlet-name>Registration</servlet-name>
 	<servlet-class>com.java.servlet.RegisterServlet</servlet-class>
 </servlet>
@@ -79,17 +88,11 @@
 	<url-pattern>/delMOrd</url-pattern>
 </servlet-mapping>
 
-
 </web-app>
 
 
-	<servlet-name>empInsert</servlet-name>
-	<servlet-class>projectpackage1.empInsert</servlet-class>
-</servlet>
-<servlet-mapping>
-	<servlet-name>empInsert</servlet-name>
-	<url-pattern>/insertform</url-pattern>
-</servlet-mapping>
 
-</web-app>
+
+	
+
 
