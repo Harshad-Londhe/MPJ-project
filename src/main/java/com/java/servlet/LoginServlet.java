@@ -31,17 +31,37 @@ public class LoginServlet extends HttpServlet {
 		isTrue = UserDBUtil.validate(username, password, userType);
 		
 		if(isTrue==true) {
+			System.out.println(username);
 			HttpSession session = request.getSession();
             session.setAttribute("username", username);
             
-            //response.sendRedirect("managerDashboard.jsp");
+            response.sendRedirect("success.jsp");
             
-            List<ManagerOrder> mOrderDetails = ManagerOrderDBUtil.getMOrder(username);
-			request.setAttribute("mOrderDetails", mOrderDetails);
-			
-			
-	            RequestDispatcher dispatcher = request.getRequestDispatcher("manageOrders.jsp");
-	            dispatcher.forward(request, response);
+            String ad = "admin";
+            String cus = "customer";
+            String sup = "supplier";
+            String man = "manager";
+            
+            
+            if (ad.equals(userType)) {
+            	RequestDispatcher dispatcher1 = request.getRequestDispatcher("success.jsp");
+                dispatcher1.forward(request, response);
+            } else if (cus.equals(userType)) {
+            	RequestDispatcher dispatcher2 = request.getRequestDispatcher("success.jsp");
+                dispatcher2.forward(request, response);
+          
+            } else if (sup.equals(userType)) {
+            	RequestDispatcher dispatcher3 = request.getRequestDispatcher("success.jsp");
+                dispatcher3.forward(request, response);
+            } else if (man.equals(userType)) {
+                RequestDispatcher dispatcher4 = request.getRequestDispatcher("success.jsp");
+                dispatcher4.forward(request, response);
+            } else {
+               
+                RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
+                dispatcher.forward(request, response);
+            }
+       
 		}
 		
 		else {
