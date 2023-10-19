@@ -14,11 +14,11 @@
 	    <li><a href="manageOrders.jsp"> <i class="fa fa-user" style="font-size:25px; color:white"></i>Manage Orders</a></li>
 	    
 	    <li><a href="manageEnquiry.php"> <i class="material-icons" style="font-size:25px;color:white">question_answer</i>Manage Enquiries</a></li> 
+
 	    <li id="logout"><a href="logout"> <i class="fa fa-sign-out" style="font-size:25px;color:white"></i>Log Out</a></li>
+
 	    
 
-
-		
 	</ul>
 	            
 	            
