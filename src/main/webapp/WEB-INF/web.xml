@@ -111,17 +111,6 @@
 </servlet-mapping>
 
 <servlet>
-        <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>com.java.servlet.LogoutServlet</servlet-class>
-</servlet>
-
-<servlet-mapping>
-        <servlet-name>LogoutServlet</servlet-name>
-        <url-pattern>/logout</url-pattern>
-</servlet-mapping>
-
-
-<servlet>
         <servlet-name>updateMedServlet</servlet-name>
         <servlet-class>com.java.servlet.updateMedServlet</servlet-class>
 </servlet>
