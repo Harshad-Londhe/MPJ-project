@@ -15,30 +15,27 @@ public class EmpDBUtil {
 		boolean isSuccess = false;
 		
 		//create database connection
-		
 		try {
-			
 			con = DBconnectThil.getConnection();
 			stmt = con.createStatement();
 			
 			String sql = "insert into emp values(0, '"+fname+"', '"+lname+"', '"+dob+"', '"+phone+"', '"+gender+"', '"+email+"', '"+pwd+"', '"+add+"', '"+job+"', '"+join+"', '"+insure+"', '"+zone+"')";
+			int rst = stmt.executeUpdate(sql);
 			
-			int rs = stmt.executeUpdate(sql);
-			
-			if(rs > 0) {
+			if(rst > 0) {
 				isSuccess = true;
 			}else {
 				isSuccess = false;
-			}
-			
-			
+			}	
 		}
 		catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 		return isSuccess;
 		
-	}
+	} //INSERT EMp CLOSE tag
+	
+	
+	
 
 }
