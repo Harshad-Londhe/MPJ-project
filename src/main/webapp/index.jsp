@@ -7,12 +7,6 @@
 
 <%
 
-/*	User auth = (User) request.getSession().getAttribute("auth");
-	if (auth != null) {
-	    request.setAttribute("person", auth);
-	}*/
-	
-	
 	String username = (String) session.getAttribute("username");
 	if (username == null) {
 	    response.sendRedirect("login.jsp");
