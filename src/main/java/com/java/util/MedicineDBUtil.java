@@ -87,6 +87,38 @@ public class MedicineDBUtil {
 			
 		}
 		
+		public static List<Medicine> getMedicine(int id){
+			
+			List <Medicine> singleMed = new ArrayList<>();
+			
+			try {
+				con = DBconnection.getConnection();
+				stmt = con.createStatement();
+				
+				String sql = "select * from omos.medicines where id='"+id+"'";
+				rs =stmt.executeQuery(sql);
+				
+				if(rs.next()) {
+					int medid= rs.getInt(1);
+					String medCode = rs.getString(2);
+					String medName = rs.getString(3);
+					String indic = rs.getString(4);
+					int qty = rs.getInt(5);
+					String expDate = rs.getString(6);
+					int unitPrice = rs.getInt(7);
+					String manuf = rs.getString(8);
+					
+					Medicine med = new Medicine(medid, medCode, medName,indic, qty, expDate, unitPrice, manuf);
+					singleMed.add(med);
+				}
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+			return singleMed;
+		}
+		
 		public static boolean updateMed(String code, String name, String ind, int qty, String expD, double price, String manuf) {
 			boolean isSuccess = false;
 			try {
@@ -140,6 +172,8 @@ public class MedicineDBUtil {
 			return isSuccess;
 			
 		}
+		
+
 		
 		
 }
