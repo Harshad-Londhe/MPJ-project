@@ -18,6 +18,7 @@ import com.java.model.Cart;
 import com.java.model.Order;
 import com.java.model.User;
 import com.java.util.OrderDao;
+import com.java.util.UserDBUtil;
 
 import projectpackage1.DBconnection;
 
@@ -34,12 +35,13 @@ public class CheckOutServlet extends HttpServlet {
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             Date date = new Date();
 			ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");
-			User auth = (User) request.getSession().getAttribute("auth");
-			if(cart_list != null && auth!=null) {
+			String username = (String) request.getSession().getAttribute("username");
+			User user = UserDBUtil.getUser(username);
+			if(cart_list != null && username!=null) {
 				for(Cart c:cart_list) {
 					Order order = new Order();
 					order.setId(c.getId());
-					order.setUid(auth.getId());
+					order.setUid(user.getId());
 					order.setQunatity(c.getQuantity());
 					order.setDate(formatter.format(date));
 					
@@ -50,8 +52,9 @@ public class CheckOutServlet extends HttpServlet {
 				cart_list.clear();
 				response.sendRedirect("orders.jsp");
 			}else {
-				if(auth==null) {
+				if(username==null) {
 					response.sendRedirect("login.jsp");
+					System.out.println(username);
 				}
 				response.sendRedirect("cart.jsp");
 			}

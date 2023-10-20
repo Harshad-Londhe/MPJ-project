@@ -17,7 +17,8 @@
 	if (username != null) {
 	    //request.setAttribute("person", auth);
 	    OrderDao orderDao  = new OrderDao(DBconnection.getConnection());
-		//orders = orderDao.userOrders(auth.getId());
+	    User user = UserDBUtil.getUser(username);
+		orders = orderDao.userOrders(user.getId());
 		//sessio eken id eka gattanm hari
 	}else{
 		response.sendRedirect("login.jsp");
@@ -35,7 +36,7 @@
 <title>E-Commerce Cart</title>
 </head>
 <body>
-	<%@include file="/includes/navbar.jsp"%>
+	<%@include file="includes/navbar.jsp"%>
 	<div class="container">
 		<div class="card-header my-3">All Orders</div>
 		<table class="table table-light">
