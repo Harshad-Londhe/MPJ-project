@@ -2,6 +2,12 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<%
+String username = (String) session.getAttribute("username");
+if (username == null) {
+    response.sendRedirect("login.jsp");
+}
+%>
 
 <!DOCTYPE html>
 <html>
@@ -60,7 +66,7 @@
                 					<td>${MordDetails.orderDate}</td>
                 					<td>${MordDetails.itemAndqty}</td>
                 					<td>${MordDetails.itemDesc}</td>
-                					
+                					<td>${MordDetails.orderStatus}</td>
                 					<td><form action="ordSt" method="post">
                                             <input type="hidden" name="orderId" value="${MordDetails.id}">
                                             <input type="submit" name="action" value="Accepted">

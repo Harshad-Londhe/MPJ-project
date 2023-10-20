@@ -54,9 +54,12 @@
 	</table>
 	<br>
 	<input type="submit" name="submit" value="Update Order">
+	</form>
 	
-	<input type="submit" name="submit" value="Delete Order">
-	
+	<form action="delMOrd" method = "post">
+		<input type="hidden" name="id" value="<%= id %>">
+		<input type="hidden" name="managerID" value="<%= managerID %>">
+		<input type="submit" name="submit" value="Delete Order">
 	</form>
 
 </body>
