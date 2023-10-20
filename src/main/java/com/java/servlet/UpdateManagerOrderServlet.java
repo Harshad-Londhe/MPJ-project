@@ -1,6 +1,7 @@
 package com.java.servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.java.model.ManagerOrder;
 import com.java.util.ManagerOrderDBUtil;
 
 
@@ -30,6 +32,14 @@ public class UpdateManagerOrderServlet extends HttpServlet {
 		isTrue = ManagerOrderDBUtil.updateOrder(id, itemAndqty, itemDesc);
 		
 		if(isTrue == true) {
+			List<ManagerOrder> mOrderDetails = ManagerOrderDBUtil.getMOrder(managerID);
+			request.setAttribute("mOrderDetails", mOrderDetails);
+			
+			if (request.getParameter("view") != null) {
+	            RequestDispatcher dispatcher = request.getRequestDispatcher("manageOrders.jsp");
+	            dispatcher.forward(request, response);
+	        }
+			
 			RequestDispatcher dis = request.getRequestDispatcher("manageOrders.jsp");
 			dis.forward(request, response);
 		}

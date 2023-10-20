@@ -1,12 +1,16 @@
 package com.java.servlet;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.java.model.ManagerOrder;
 import com.java.util.ManagerOrderDBUtil;
 
 @WebServlet("/UpdateOrderStatusServlet")
@@ -20,7 +24,11 @@ public class UpdateOrderStatusServlet extends HttpServlet {
         boolean isSuccess = ManagerOrderDBUtil.updateOrderStatus(orderId, action);
         
         if (isSuccess) {
-            response.sendRedirect("manageOrders.jsp");
+        	List<ManagerOrder> dataForSupplier = ManagerOrderDBUtil.getAllOrders();
+    		request.setAttribute("dataForSupplier", dataForSupplier);
+    		
+    		RequestDispatcher dis = request.getRequestDispatcher("SupplierUi.jsp");
+    		dis.forward(request, response);
         } 
         else {
             response.getWriter().write("Update Failed");
