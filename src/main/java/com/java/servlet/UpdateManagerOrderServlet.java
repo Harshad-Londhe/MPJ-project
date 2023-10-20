@@ -28,7 +28,6 @@ public class UpdateManagerOrderServlet extends HttpServlet {
 		boolean isTrue;
 		
 		isTrue = ManagerOrderDBUtil.updateOrder(id, itemAndqty, itemDesc);
-		isTrue = ManagerOrderDBUtil.deleteOrder(id);
 		
 		if(isTrue == true) {
 			RequestDispatcher dis = request.getRequestDispatcher("manageOrders.jsp");

@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
             session.setAttribute("username", username);
             
-            response.sendRedirect("success.jsp");
+            //response.sendRedirect("success.jsp");
             
             String ad = "admin";
             String cus = "customer";
@@ -47,14 +47,14 @@ public class LoginServlet extends HttpServlet {
             	RequestDispatcher dispatcher1 = request.getRequestDispatcher("success.jsp");
                 dispatcher1.forward(request, response);
             } else if (cus.equals(userType)) {
-            	RequestDispatcher dispatcher2 = request.getRequestDispatcher("success.jsp");
+            	RequestDispatcher dispatcher2 = request.getRequestDispatcher("managerDashboard.jsp");
                 dispatcher2.forward(request, response);
           
             } else if (sup.equals(userType)) {
             	RequestDispatcher dispatcher3 = request.getRequestDispatcher("success.jsp");
                 dispatcher3.forward(request, response);
             } else if (man.equals(userType)) {
-                RequestDispatcher dispatcher4 = request.getRequestDispatcher("success.jsp");
+                RequestDispatcher dispatcher4 = request.getRequestDispatcher("managerDashboard.jsp");
                 dispatcher4.forward(request, response);
             } else {
                
