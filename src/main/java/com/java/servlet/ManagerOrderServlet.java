@@ -22,7 +22,7 @@ public class ManagerOrderServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String itemAndqty = request.getParameter("item&qty");
+		String itemAndqty = request.getParameter("itemAndqty");
 		String itemDesc = request.getParameter("item_description");
 		
 		
@@ -43,16 +43,14 @@ public class ManagerOrderServlet extends HttpServlet {
 			List<ManagerOrder> mOrderDetails = ManagerOrderDBUtil.getMOrder(managerId);
 			request.setAttribute("mOrderDetails", mOrderDetails);
 			
-//			if (request.getParameter("view") != null) {
-//	            RequestDispatcher dispatcher = request.getRequestDispatcher("manageOrders.jsp");
-//	            dispatcher.forward(request, response);
-//	        }
+			if (request.getParameter("view") != null) {
+	            RequestDispatcher dispatcher = request.getRequestDispatcher("manageOrders.jsp");
+	            dispatcher.forward(request, response);
+	        }
 			
 			RequestDispatcher dis = request.getRequestDispatcher("manageOrders.jsp");
 			dis.forward(request, response);
 			
-			//RequestDispatcher dispatcher = request.getRequestDispatcher("viewPage.jsp");
-	        //dispatcher.forward(request, response);
 		}
 		
 		else {
