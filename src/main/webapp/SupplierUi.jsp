@@ -1,13 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<%
-String username = (String) session.getAttribute("username");
-if (username == null) {
-    response.sendRedirect("login.jsp");
-}
-%>
 
 <!DOCTYPE html>
 <html>
@@ -31,51 +23,50 @@ if (username == null) {
 </head>
 <body>
     <div class="container">
-        <jsp:include page="/Manager/views/leftPanel.jsp"></jsp:include> 
-
         <div class="right_panel">
             <div class="upper_panel">
                 <div class="upper_panel_left">
-                    <h6>Manage Users</h6>
+                    <h6>My Orders</h6>
                 </div>
-
                 <jsp:include page="/Manager/views/upperPanelRight.jsp"></jsp:include>
             </div>
-			<form action="supp" method="post">
-    			<input type="submit" value="Trigger Servlet">
-			</form>
+			
 
             <div class="middle_panel">
                 <div class="left_box">
                     <h6>All Medicines</h6>
                     <div class="grid">
-                    
-                        <table border="1">
-                            <tr>
-                                <th>Order ID</th>
-                                <th>Manager ID</th>
-                                <th>Order Date</th>
-                                <th>Item and Quantity</th>
-                                <th>Item Description</th>
-                                <th>Order Status</th>
-                            </tr>
-                            <c:forEach var="MordDetails" items="${dataForSupplier}">
+                        <table class="table table-bordered table-striped">
+                            <thead>
                                 <tr>
-                                    <td>${MordDetails.id}</td>
-                					<td>${MordDetails.managerID}</td>
-                					<td>${MordDetails.orderDate}</td>
-                					<td>${MordDetails.itemAndqty}</td>
-                					<td>${MordDetails.itemDesc}</td>
-                					<td>${MordDetails.orderStatus}</td>
-                					<td><form action="ordSt" method="post">
-                                            <input type="hidden" name="orderId" value="${MordDetails.id}">
-                                            <input type="submit" name="action" value="Accepted">
-                                            <input type="submit" name="action" value="Rejected">
-                                        </form>
-                					</td>
-                					
+                                    <th>Order ID</th>
+                                    <th>Manager ID</th>
+                                    <th>Order Date</th>
+                                    <th>Item and Quantity</th>
+                                    <th>Item Description</th>
+                                    <th>Order Status</th>
+                                    <th>Actions</th>
                                 </tr>
-                            </c:forEach>
+                            </thead>
+                            <tbody>
+                                <c:forEach var="MordDetails" items="${dataForSupplier}">
+                                    <tr>
+                                        <td>${MordDetails.id}</td>
+                                        <td>${MordDetails.managerID}</td>
+                                        <td>${MordDetails.orderDate}</td>
+                                        <td>${MordDetails.itemAndqty}</td>
+                                        <td>${MordDetails.itemDesc}</td>
+                                        <td>${MordDetails.orderStatus}</td>
+                                        <td>
+                                            <form action="ordSt" method="post">
+                                                <input type="hidden" name="orderId" value="${MordDetails.id}">
+                                                <input type="submit" name="action" value="Accepted" class="btn btn-success">
+                                                <input type="submit" name="action" value="Rejected" class="btn btn-danger">
+                                            </form>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -84,4 +75,3 @@ if (username == null) {
     </div>
 </body>
 </html>
-                

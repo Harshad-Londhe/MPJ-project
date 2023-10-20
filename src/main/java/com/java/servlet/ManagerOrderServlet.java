@@ -25,7 +25,6 @@ public class ManagerOrderServlet extends HttpServlet {
 		String itemAndqty = request.getParameter("itemAndqty");
 		String itemDesc = request.getParameter("item_description");
 		
-		
 		HttpSession session = request.getSession();
 		String managerId = (String) session.getAttribute("username");
 		
@@ -36,8 +35,6 @@ public class ManagerOrderServlet extends HttpServlet {
 		boolean isTrue;
 		
 		isTrue = ManagerOrderDBUtil.createMOrder(managerId, FcurrentDate, itemAndqty, itemDesc);
-		
-		
 		
 		if(isTrue==true) {
 			List<ManagerOrder> mOrderDetails = ManagerOrderDBUtil.getMOrder(managerId);
