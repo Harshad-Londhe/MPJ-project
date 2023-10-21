@@ -1,4 +1,4 @@
-package projectpackage1;
+package com.java.servlet;
 
 import java.io.IOException;
 
@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.java.util.UserDBUtil;
 
 
 @WebServlet("/RegisterServlet")
@@ -21,15 +23,16 @@ public class RegisterServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String fname = request.getParameter("Fname");
 		String lname = request.getParameter("Lname");
-		String DoB = request.getParameter("Dob");
-		String gender = request.getParameter("gender");
 		String address = request.getParameter("address");
+		String gender = request.getParameter("gender");
+		String birthdate = request.getParameter("birthdate");
 		String phone = request.getParameter("phone-number");
 		String pwd = request.getParameter("psw");
 		
+		
 		boolean isTrue;
 		
-		isTrue = UserDBUtil.createUser(Uname, email, fname, lname, DoB, gender, address, phone, pwd);
+		isTrue = UserDBUtil.createUser(Uname, email, fname, lname, address, gender, birthdate, phone, pwd);
 		
 		if(isTrue==true) {
 			RequestDispatcher dis = request.getRequestDispatcher("login.jsp");
