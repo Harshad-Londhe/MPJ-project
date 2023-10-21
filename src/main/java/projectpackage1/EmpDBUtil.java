@@ -37,9 +37,9 @@ public class EmpDBUtil {
 		
 	} //INSERT EMp CLOSE tag
 	
-	public static List<Employee> getEmpDetails(String Id){
+	public static List<Employee> getEmpDetails(){
 		
-		int convertedId = Integer.parseInt(Id);
+
 		
 		ArrayList<Employee> emp = new ArrayList<>();
 		
@@ -47,7 +47,7 @@ public class EmpDBUtil {
 			con = DBconnectThil.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "select * from emp where id = '"+convertedId+"'";
+			String sql = "select * from emp  ";
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {
@@ -76,5 +76,30 @@ public class EmpDBUtil {
 		return emp;
 	}
 	
+	
+	public static boolean updateEmp(String id, String fname, String lname, String dob, String phone, String gender, String email, String pwd, String add, String job, String join, String insure, String zone) {
+		
+		boolean isSuccess = false;
+		
+		//create database connection
+		try {
+			con = DBconnectThil.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "UPDATE emp SET fname = '"+fname+"', lname = '"+lname+"', dob = '"+dob+"', phone = '"+phone+"', gender = '"+gender+"', email = '"+email+"', pwd = '"+pwd+"', `add` = '"+add+"', job = '"+job+"', `join` = '"+join+"', insure = '"+insure+"', zone = '"+zone+"' WHERE id = '"+id+"'";
+
+			int rst = stmt.executeUpdate(sql);
+			
+			if(rst > 0) {
+				isSuccess = true;
+			}else {
+				isSuccess = false;
+			}	
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return isSuccess;
+	}
 
 }
