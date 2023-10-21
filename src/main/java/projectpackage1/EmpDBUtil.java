@@ -12,7 +12,7 @@ public class EmpDBUtil {
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 	
-	public static boolean insertEmp(String fname, String lname, String dob, String phone, String gender, String email, String pwd, String add, String job, String join, String insure, String zone) {
+	public static boolean insertEmp(String fname, String lname, String dob, String phone, String gender, String email, String pwd, String add, String job, String join, String insure, String zone, String username) {
 		
 		boolean isSuccess = false;
 		
@@ -21,7 +21,7 @@ public class EmpDBUtil {
 			con = DBconnectThil.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "insert into emp values(0, '"+fname+"', '"+lname+"', '"+dob+"', '"+phone+"', '"+gender+"', '"+email+"', '"+pwd+"', '"+add+"', '"+job+"', '"+join+"', '"+insure+"', '"+zone+"')";
+			String sql = "insert into emp values(0, '"+fname+"', '"+lname+"', '"+dob+"', '"+phone+"', '"+gender+"', '"+email+"', '"+pwd+"', '"+add+"', '"+job+"', '"+join+"', '"+insure+"', '"+zone+"', '"+username+"')";
 			int rst = stmt.executeUpdate(sql);
 			
 			if(rst > 0) {
@@ -64,8 +64,9 @@ public class EmpDBUtil {
 				String join = rs.getString(11);
 				String insure = rs.getString(12);
 				String zone = rs.getString(13);
+				String username = rs.getString(14);
 				
-				Employee e = new Employee(id,fname,lname,dob,phone,gender,email,pwd,add,job,join,insure,zone);
+				Employee e = new Employee(id,fname,lname,dob,phone,gender,email,pwd,add,job,join,insure,zone,username);
 				emp.add(e);
 				
 			}
@@ -77,7 +78,7 @@ public class EmpDBUtil {
 	}
 	
 	
-	public static boolean updateEmp(String id, String fname, String lname, String dob, String phone, String gender, String email, String pwd, String add, String job, String join, String insure, String zone) {
+	public static boolean updateEmp(String id, String fname, String lname, String dob, String phone, String gender, String email, String pwd, String add, String job, String join, String insure, String zone, String username) {
 		
 		boolean isSuccess = false;
 		
@@ -86,7 +87,7 @@ public class EmpDBUtil {
 			con = DBconnectThil.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "UPDATE emp SET fname = '"+fname+"', lname = '"+lname+"', dob = '"+dob+"', phone = '"+phone+"', gender = '"+gender+"', email = '"+email+"', pwd = '"+pwd+"', `add` = '"+add+"', job = '"+job+"', `join` = '"+join+"', insure = '"+insure+"', zone = '"+zone+"' WHERE id = '"+id+"'";
+			String sql = "UPDATE emp SET fname = '"+fname+"', lname = '"+lname+"', dob = '"+dob+"', phone = '"+phone+"', gender = '"+gender+"', email = '"+email+"', pwd = '"+pwd+"', `add` = '"+add+"', job = '"+job+"', `join` = '"+join+"', insure = '"+insure+"', zone = '"+zone+"', username = '"+username+"' WHERE id = '"+id+"'";
 
 			int rst = stmt.executeUpdate(sql);
 			
