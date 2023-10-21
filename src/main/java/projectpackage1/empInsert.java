@@ -38,10 +38,11 @@ public class empInsert extends HttpServlet {
 		String join = request.getParameter("join_date");
 		String insure = request.getParameter("insure");
 		String zone = request.getParameter("zone");
+		String username = request.getParameter("user_name");
 		
 		boolean isTrue;
 		
-		isTrue = EmpDBUtil.insertEmp(fname, lname, dob, phone, gender, email, pwd, add, job, join, insure, zone);
+		isTrue = EmpDBUtil.insertEmp(fname, lname, dob, phone, gender, email, pwd, add, job, join, insure, zone, username);
 		
 		if(isTrue == true) {
 			
