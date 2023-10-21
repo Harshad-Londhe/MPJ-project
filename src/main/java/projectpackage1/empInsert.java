@@ -1,6 +1,7 @@
 package projectpackage1;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,6 +25,7 @@ public class empInsert extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+//		String id = request.getParameter("em_id");
 		String fname = request.getParameter("first_name");
 		String lname = request.getParameter("last_name");
 		String dob = request.getParameter("DOB");
@@ -42,6 +44,10 @@ public class empInsert extends HttpServlet {
 		isTrue = EmpDBUtil.insertEmp(fname, lname, dob, phone, gender, email, pwd, add, job, join, insure, zone);
 		
 		if(isTrue == true) {
+			
+//			List<Employee> empDetails = EmpDBUtil.getEmpDetails(id); 
+//			request.setAttribute("empDetail_attr", empDetails);
+			
 			RequestDispatcher dis = request.getRequestDispatcher("Employee.jsp");
 			dis.forward(request, response);
 		}else {
