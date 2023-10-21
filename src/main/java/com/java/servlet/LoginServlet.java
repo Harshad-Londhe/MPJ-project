@@ -1,7 +1,6 @@
 package com.java.servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,14 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.java.model.ManagerOrder;
-import com.java.util.ManagerOrderDBUtil;
 import com.java.util.UserDBUtil;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -31,11 +27,8 @@ public class LoginServlet extends HttpServlet {
 		isTrue = UserDBUtil.validate(username, password, userType);
 		
 		if(isTrue==true) {
-			System.out.println(username);
 			HttpSession session = request.getSession();
             session.setAttribute("username", username);
-            
-            //response.sendRedirect("success.jsp");
             
             String ad = "admin";
             String cus = "customer";
@@ -44,22 +37,20 @@ public class LoginServlet extends HttpServlet {
             
             
             if (ad.equals(userType)) {
-            	RequestDispatcher dispatcher1 = request.getRequestDispatcher("success.jsp");
+            	RequestDispatcher dispatcher1 = request.getRequestDispatcher("AdminDb.jsp");
                 dispatcher1.forward(request, response);
+                
             } else if (cus.equals(userType)) {
-            	RequestDispatcher dispatcher2 = request.getRequestDispatcher("index.jsp");
+            	RequestDispatcher dispatcher2 = request.getRequestDispatcher("success.jsp");
                 dispatcher2.forward(request, response);
           
             } else if (sup.equals(userType)) {
-            	RequestDispatcher dispatcher3 = request.getRequestDispatcher("SupplierUi.jsp");
+            	RequestDispatcher dispatcher3 = request.getRequestDispatcher("SupplierHome.jsp");
                 dispatcher3.forward(request, response);
+                
             } else if (man.equals(userType)) {
                 RequestDispatcher dispatcher4 = request.getRequestDispatcher("managerDashboard.jsp");
                 dispatcher4.forward(request, response);
-            } else {
-               
-                RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
-                dispatcher.forward(request, response);
             }
        
 		}

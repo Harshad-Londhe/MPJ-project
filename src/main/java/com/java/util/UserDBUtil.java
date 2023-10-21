@@ -26,24 +26,36 @@ public class UserDBUtil {
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 	
-	public static boolean validate(String username, String password, String userType) {
+public static boolean validate(String username, String password, String userType) {
 		
 		try {
 			con = DBconnection.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "SELECT * FROM "+ userType +" WHERE userName='"+username+"' AND password='"+password+"'";
-			
-			rs = stmt.executeQuery(sql);
-			
-			if(rs.next()) {
-				isSuccess = true;
+			if("customer".equals(userType)) {
+				String sql = "SELECT * FROM  customer  WHERE userName='"+username+"' AND password='"+password+"'";
+				rs = stmt.executeQuery(sql);
+				
+				if(rs.next()) {
+					isSuccess = true;
+				}
+				else {
+					isSuccess = false;
+				}
 			}
+			
 			else {
-				isSuccess = false;
+				String sql = "SELECT * FROM emp_table WHERE username='"+username+"' AND pwd='"+password+"' AND job='"+userType+"'";
+				rs = stmt.executeQuery(sql);
+				
+				if(rs.next()) {
+					isSuccess = true;
+				}
+				else {
+					isSuccess = false;
+				}
 			}
 				
-			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
