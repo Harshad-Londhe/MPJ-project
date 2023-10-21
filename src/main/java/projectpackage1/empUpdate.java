@@ -33,10 +33,11 @@ public class empUpdate extends HttpServlet {
 		String join = request.getParameter("join_date");
 		String insure = request.getParameter("insure");
 		String zone = request.getParameter("zone");
+		String username = request.getParameter("user_name");
 		
 		boolean isTrue;
 		
-		isTrue = projectpackage1.EmpDBUtil.updateEmp(id, fname, lname, dob, phone, gender, email, pwd, add, job, join, insure, zone);
+		isTrue = projectpackage1.EmpDBUtil.updateEmp(id, fname, lname, dob, phone, gender, email, pwd, add, job, join, insure, zone, username);
 		
 		if(isTrue == true) {
 			
