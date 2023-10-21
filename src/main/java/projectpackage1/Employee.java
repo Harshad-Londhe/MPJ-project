@@ -14,9 +14,10 @@ public class Employee {
 	private String join;
 	private String insure;
 	private String zone;
+	private String username;
 	
 	public Employee(int id, String fanme, String lname, String dob, String phone, String gender, String email,
-			String pwd, String add, String job, String join, String insure, String zone) {
+			String pwd, String add, String job, String join, String insure, String zone, String username) {
 		super();
 		this.id = id;
 		this.fanme = fanme;
@@ -31,6 +32,7 @@ public class Employee {
 		this.join = join;
 		this.insure = insure;
 		this.zone = zone;
+		this.username = username;
 	}
 
 	public int getId() {
@@ -84,6 +86,12 @@ public class Employee {
 	public String getZone() {
 		return zone;
 	}
+
+	public String getUsername() {
+		return username;
+	}
+
+
 	
 
 }
