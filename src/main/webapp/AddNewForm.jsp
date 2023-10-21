@@ -73,6 +73,11 @@
             </p>
 
         <span class="title">Working Details</span>
+        
+        	<p class="input-field-address">
+                <label for="">User Name:</label>
+                <input type="text" name="user_name" maxlength="8" required>
+            </p>
 
             <p class="input-field-address">
                 <label for="">Job title:</label>
