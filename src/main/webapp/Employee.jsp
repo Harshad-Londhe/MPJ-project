@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,25 +35,34 @@
     <div class="table-outer">
         <div class="tablewrap-employee">
         <table class="emp">
-                    
-                        <thead>
-                            <tr>
-                                <th>Employee Id</th>
-                                <th>Employee Name</th>
-                                <th>Job Title</th>
-                                <th>Zone</th>
-                                <th>Joining Date</th>
-                                <th>Mobile No.</th>
-                                <th> Delete </th>
-                                <th> Update </th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                            
-                            
-                        </tbody>
+                <thead>
+			        <tr>
+			            <th>Employee Id</th>
+			            <th>Employee Name</th>
+			            <th>Job Title</th>
+			            <th>Zone</th>
+			            <th>Joining Date</th>
+			            <th>Mobile No.</th>
+			            <th> Delete </th>
+			            <th> Update </th>
+			            <th></th>
+			        </tr>
+                 </thead>
+                 <tbody>
+                 	<c:forEach var="emp" items="${empDetail_attr}">        
+                     <tr>
+                     	<td>${emp.id}</td>
+                     	<td>${emp.fname}</td>
+                     	<td>${emp.job}</td>
+                     	<td>${emp.zone}</td>
+                     	<td>${emp.join}</td>
+                     	<td>${emp.phone}</td>
+
+                     	
+                     </tr>
+					</c:forEach>
+                 </tbody>
+                 
                     </table>
 
 
