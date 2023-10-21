@@ -76,7 +76,7 @@
                     <c:set var="emppwd" value="${emp.pwd}"/>
                     <c:set var="empadd" value="${emp.add}"/>
                     <c:set var="empinsure" value="${emp.insure}"/>
-                    
+                    <c:set var="empusername" value="${emp.username}"/>
                     
 
                     <tr>
@@ -102,6 +102,7 @@
 									<c:param name="join" value="${empjoin}"/>
 									<c:param name="insure" value="${empinsure}"/>
 									<c:param name="zone" value="${empzone}"/>
+									<c:param name="username" value="${empusername}"/>
 								</c:url>
 								
 								<a href="${empupdate}">
