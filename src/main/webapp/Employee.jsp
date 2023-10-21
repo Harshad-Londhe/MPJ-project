@@ -1,5 +1,7 @@
+<%@page import="projectpackage1.EmpDBUtil"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -18,6 +20,15 @@
 
 </head>
 <body>
+
+    <%@ page import="projectpackage1.Employee" %>
+	<%@ page import="java.util.List" %>
+	
+
+	<%
+		List<Employee> empDetails = EmpDBUtil.getEmpDetails(); 
+		request.setAttribute("empDetails", empDetails);
+	%>
 
 <!---------------------------------------- SIDEBAR BEGINING ------------------------------------------>
     <%@ include file="Sidebar.jsp" %>
@@ -49,18 +60,63 @@
 			        </tr>
                  </thead>
                  <tbody>
-                 	<c:forEach var="emp" items="${empDetail_attr}">        
-                     <tr>
-                     	<td>${emp.id}</td>
-                     	<td>${emp.fname}</td>
+                 
+                 	<c:forEach var="emp" items="${empDetails}">
+                    <c:set var="empid" value="${emp.id}" />
+                    <c:set var="empfname" value="${emp.fanme}" />
+                    <c:set var="empjob" value="${emp.job}" />
+                    <c:set var="empzone" value="${emp.zone}" />
+                    <c:set var="empjoin" value="${emp.join}"/>
+                    <c:set var="empphone" value="${emp.phone}" />
+                    
+                    <c:set var="emplname" value="${emp.lname}"/>
+                    <c:set var="empdob" value="${emp.dob}"/>
+                    <c:set var="empgender" value="${emp.gender}"/>
+                    <c:set var="empemail" value="${emp.email}"/>
+                    <c:set var="emppwd" value="${emp.pwd}"/>
+                    <c:set var="empadd" value="${emp.add}"/>
+                    <c:set var="empinsure" value="${emp.insure}"/>
+                    
+                    
+
+                    <tr>
+                        <td>${emp.id}</td>
+                     	<td>${emp.fanme}</td>
                      	<td>${emp.job}</td>
                      	<td>${emp.zone}</td>
                      	<td>${emp.join}</td>
                      	<td>${emp.phone}</td>
-
-                     	
-                     </tr>
-					</c:forEach>
+                        <td>
+                            	<c:url value="UpdateEmp.jsp" var="empupdate">
+									<c:param name="id" value="${empid}"/>
+									<c:param name="fname" value="${empfname}"/>
+									<c:param name="lname" value="${emplname}"/>
+									<c:param name="dob" value="${empdob}"/>
+									<c:param name="phone" value="${empphone}"/>
+									<c:param name="gender" value="${empgender}"/>
+									<c:param name="email" value="${empemail}"/>
+									<c:param name="pass" value="${emppwd}"/>
+									<c:param name="add" value="${empadd}"/>
+									
+									<c:param name="job" value="${empjob}"/>
+									<c:param name="join" value="${empjoin}"/>
+									<c:param name="insure" value="${empinsure}"/>
+									<c:param name="zone" value="${empzone}"/>
+								</c:url>
+								
+								<a href="${empupdate}">
+								<span class="material-symbols-rounded" id="update">update</span>
+								</a>
+                        </td>
+                        <td>
+                        	<a href="#">
+                                <span class="material-symbols-rounded" id="delete">delete</span>
+                            </a>
+                        </td>
+                    </tr>
+                </c:forEach>	
+                
+                
                  </tbody>
                  
                     </table>
@@ -75,7 +131,7 @@
 
     <div class="add-emp">
 
-        <a href="#" class="addEmp">
+        <a href="AddNewForm.jsp" class="addEmp">
             <span class="btn-text">Add a new employee</span>
             <span class="material-symbols-rounded">person_add</span>
         </a>
