@@ -22,76 +22,92 @@
     <%@ include file="Sidebar.jsp" %>
 <!------------------------------------------- SIDEBAR END ------------------------------------------>
 
+	<%
+		String id = request.getParameter("id");
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
+		String dob = request.getParameter("dob");
+		String phone = request.getParameter("phone");
+		String gender = request.getParameter("gender");
+		String email = request.getParameter("email");
+		String password = request.getParameter("pass");
+		String add = request.getParameter("add");
+		
+		String job = request.getParameter("job");
+		String join = request.getParameter("join");
+		String insure = request.getParameter("insure");
+		String zone = request.getParameter("zone");
+	%>
 
-<form action="#" method="post" class="userform">
+<form action="updatetform" method="post" class="userform">
 
     <div class="field">
 
         <span class="title">Personal Details</span>
 
-        <input type="hidden" name="em_id" value="">
+        <input type="hidden" name="em_id" value="<%=id%>">
 
             <p class="input-field-address">
                 <label for="">First Name:</label>
-                <input type="text" name="first_name" maxlength="50" required>
+                <input type="text" name="first_name" value="<%=fname%>" maxlength="50" required>
             </p>
 
             <p class="input-field-address">
                 <label for="">Last Name:</label>
-                <input type="text" name="last_name" maxlength="100" required>
+                <input type="text" name="last_name" value="<%=lname%>" maxlength="100" required>
             </p>
 
             <p class="input-field">
                 <label for="">birthday:</label>
-                <input type="date" name="DOB">
+                <input type="date" name="DOB" value="<%=dob%>" >
             </p>
 
             <p class="input-field">
                 <label for="">mobile_no:</label>
-                <input type="text" name="mobile_no" maxlength="10" required>
+                <input type="text" name="mobile_no" value="<%=phone%>"maxlength="10" required>
             </p>
 
-<!--             <p class="input-field">
+             <p class="input-field">
                 <label for="">gender:</label>
-                <input type="text" name="gender" maxlength="10" required>
+                <input type="text" name="gender" value="<%=gender%>" maxlength="10" required>
             </p>
 
             <p class="input-field-address">
                 <label for="">Email Address:</label>
-                <input type="text" name="email" maxlength="100" required>
+                <input type="text" name="email" value="<%=email%>" maxlength="100" required>
             </p>
 
             <p class="input-field-address">
                 <label for="">New Password:</label>
-                <input type="password" name="password" maxlength="40" required>
+                <input type="password" name="password" value="<%=password%>" maxlength="40" required>
             </p>
 
             <p class="input-field-address">
                 <label for="">Address:</label>
-                <input type="text" name="address" maxlength="200" required>
+                <input type="text" name="address" value="<%=add%>" maxlength="200" required>
             </p>
 
         <span class="title">Working Details</span>
 
             <p class="input-field-address">
                 <label for="">Job title:</label>
-                <input type="text" name="title" maxlength="100" required>
+                <input type="text" name="title" value="<%=job%>" maxlength="100" required>
             </p>
 
             <p class="input-field-address">
                 <label for="">Join_date:</label>
-                <input type="date" name="join_date">
+                <input type="date" name="join_date" value="<%=join%>">
             </p>
 
             <p class="input-field-address">
                 <label for="">Insure:</label>
-                <input type="text" name="insure" maxlength="100" required>
+                <input type="text" name="insure" value="<%=insure%>" maxlength="100" required>
             </p>
 
             <p class="input-field-address">
                 <label for="">Working Zone:</label>
-                <input type="text" name="zone" maxlength="20" required>
-            </p> -->
+                <input type="text" name="zone" value="<%=zone%>" maxlength="20" required>
+            </p> 
 
 
             <div class="buttons">
