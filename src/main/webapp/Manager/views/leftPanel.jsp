@@ -14,7 +14,7 @@
 				style="font-size: 25px; color: white"></i>Manage Medicines</a></li>
 
 		<li>
-			<form action="ManagerOrderServlet" method="post"
+			<form action="ManagerOrderViewServlet" method="post"
 				style="display: inline;">
 				<input type="hidden" name="username"
 					value="<%=session.getAttribute("username")%>">
