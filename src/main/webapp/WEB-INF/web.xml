@@ -99,6 +99,15 @@
 	<url-pattern>/insertform</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>empUpdate</servlet-name>
+	<servlet-class>projectpackage1.empUpdate</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>empUpdate</servlet-name>
+	<url-pattern>/updatetform</url-pattern>
+</servlet-mapping>
+
 
 <servlet>
         <servlet-name>updateMedServlet</servlet-name>
