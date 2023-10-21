@@ -17,6 +17,7 @@ import com.java.model.Cart;
 import com.java.model.Order;
 import com.java.model.User;
 import com.java.util.OrderDao;
+import com.java.util.UserDBUtil;
 
 import projectpackage1.DBconnection;
 
@@ -31,9 +32,10 @@ public class OrderNowServlet extends HttpServlet {
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             Date date = new Date();
 
-            User auth = (User) request.getSession().getAttribute("auth");
+            String username = (String) request.getSession().getAttribute("username");
+			User user = UserDBUtil.getUser(username);
 
-            if (auth != null) {
+            if (user != null) {
                 String productId = request.getParameter("id");
                 int productQuantity = Integer.parseInt(request.getParameter("quantity"));
                 if (productQuantity <= 0) {
@@ -41,7 +43,7 @@ public class OrderNowServlet extends HttpServlet {
                 }
                 Order orderModel = new Order();
                 orderModel.setId(Integer.parseInt(productId));
-                orderModel.setUid(auth.getId());
+                orderModel.setUid(user.getId());
                 orderModel.setQunatity(productQuantity);
                 orderModel.setDate(formatter.format(date));
 
