@@ -33,6 +33,7 @@
 		String password = request.getParameter("pass");
 		String add = request.getParameter("add");
 		
+		String username = request.getParameter("username");
 		String job = request.getParameter("job");
 		String join = request.getParameter("join");
 		String insure = request.getParameter("insure");
@@ -88,6 +89,11 @@
             </p>
 
         <span class="title">Working Details</span>
+        
+        	<p class="input-field-address">
+                <label for="">User Name:</label>
+                <input type="text" name="user_name" value="<%=username%>" maxlength="8" required>
+            </p>
 
             <p class="input-field-address">
                 <label for="">Job title:</label>
