@@ -51,7 +51,10 @@
 
             <p class="input-field">
                 <label for="">gender:</label>
-                <input type="text" name="gender" maxlength="10" required>
+                <select name="gender" id="gender">
+				  <option value="male">male</option>
+				  <option value="female">female</option>
+				</select>
             </p>
 
             <p class="input-field-address">
@@ -73,7 +76,11 @@
 
             <p class="input-field-address">
                 <label for="">Job title:</label>
-                <input type="text" name="title" maxlength="100" required>
+                <select name="title" id="title">
+				  <option value="deliver">Deliver</option>
+				  <option value="manager">Manager</option>
+				  <option value="driver">Driver</option>
+				</select>
             </p>
 
             <p class="input-field-address">
@@ -83,12 +90,18 @@
 
             <p class="input-field-address">
                 <label for="">Insure:</label>
-                <input type="text" name="insure" maxlength="100" required>
+                <select name="insure" id="insure">
+				  <option value="Y">Yes</option>
+				  <option value="N">No</option>
+				</select>
             </p>
 
             <p class="input-field-address">
                 <label for="">Working Zone:</label>
-                <input type="text" name="zone" maxlength="20" required>
+                <select name="zone" id="zone">
+				  <option value="in">In</option>
+				  <option value="out">Out</option>
+				</select>
             </p>
 
 
