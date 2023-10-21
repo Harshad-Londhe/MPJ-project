@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class DBconnectThil {
 	
 	//create database connection
-		private static String url = "jdbc:mysql://localhost:3306/testmed";
+		private static String url = "jdbc:mysql://localhost:3306/oop_test001";
 		private static String user = "root";
 		private static String pass = "Admin@121";
 		private static Connection con;
