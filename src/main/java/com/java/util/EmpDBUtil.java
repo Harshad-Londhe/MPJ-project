@@ -132,5 +132,27 @@ public class EmpDBUtil {
 		}
 		return isSuccess;
 	}
+	
+public static String countemp() {
+		
+		String rst = null;
+		
+		try {
+			con = DBconnection.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "SELECT COUNT(*) FROM emp";
+			rs = stmt.executeQuery(sql);
+			
+			if (rs.next()) {
+	            int count = rs.getInt(1); // Assuming COUNT(*) is in the first column
+	            rst = String.valueOf(count); // Convert the count to a String
+	        }
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return rst;
+	}
 
 }
