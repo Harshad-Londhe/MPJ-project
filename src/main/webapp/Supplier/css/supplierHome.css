@@ -1,97 +1,94 @@
 @charset "ISO-8859-1";
-body {
-	font-family: Arial, sans-serif;
-	background-color: #f0f0f0;
-	margin: 0;
-	padding: 0;
+/* Reset some default styles */
+body, h1, h3 {
+    margin: 0;
+    padding: 0;
 }
 
-header {
-	background-color: #3498db;
-	color: #fff;
-	padding: 10px 0;
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
 }
 
 .container {
-	width: 80%;
-	margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.logo {
-	display: inline-block;
-	width: 20%;
+/* Header styles */
+header {
+    background-color: #4682B4;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
 }
 
 .logo img {
-	max-width: 100%;
-	height: auto;
-}
-
-.headTopic {
-	display: inline-block;
-	width: 70%;
+    max-width: 100px;
+    height: auto;
 }
 
 #mainHeading {
-	font-size: 28px;
+    font-size: 36px;
 }
 
 #slogan {
-	margin: auto;
-	font-size: 16px;
+    font-size: 18px;
 }
 
-.Line {
-	background-color: #ccc;
-	height: 2px;
-	margin-top: 20px;
-}
-
+/* Main content styles */
 h1 {
-	font-size: 24px;
-	padding: 20px 0;
-	text-align: center;
+    margin: 20px 0;
 }
 
 .MainBoxes {
-	width: 200px;
-	height: 200px;
-	background-color: #3498db;
-	color: #fff;
-	text-align: center;
-	line-height: 200px;
-	font-size: 24px;
-	margin: 10px;
-	display: inline-block;
-	cursor: pointer;
-	text-decoration: none; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
 }
 
-.MainBoxes:hover {
-	background-color: #2980b9; 
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
 }
 
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Footer styles */
 footer {
-	background-color: #3498db;
-	color: #fff;
-	padding: 20px 0;
-	text-align: center;
+    background-color: #4682B4;
+    color: #fff;
+    padding: 20px 0;
 }
 
 .footTable {
-	text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.footTable th, .footTable td {
+    text-align: center;
+    padding: 10px;
 }
 
 .footTable a {
-	color: #fff;
-	text-decoration: none;
-}
-
-.fa-brands {
-	font-size: 30px;
-	margin: 10px;
+    text-decoration: none;
+    color: #fff;
 }
 
 #Cpyright {
-	font-size: 16px;
+    font-size: 12px;
 }
+
+
