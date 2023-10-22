@@ -21,7 +21,7 @@
 	<!-- Header section -->
 	<table width="100%">
 		<tr>
-			<td width="20%"><img src="Images/logo.png" alt="logo"
+			<td width="20%"><img src="images/omos_logo.png" alt="logo"
 				width="60%" height="60%" id="logo"></td>
 
 			<td width="50%">
