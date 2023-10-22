@@ -1,4 +1,4 @@
-<%@page import="projectpackage1.EmpDBUtil"%>
+<%@page import="com.java.util.EmpDBUtil"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -21,12 +21,12 @@
 </head>
 <body>
 
-    <%@ page import="projectpackage1.Employee" %>
+    <%@ page import="com.java.model.Employee" %>
 	<%@ page import="java.util.List" %>
 	
 
 	<%
-		List<Employee> empDetails = EmpDBUtil.getEmpDetails(); 
+		List<Employee> empDetails = EmpDBUtil.getEmpDetails();
 		request.setAttribute("empDetails", empDetails);
 	%>
 
@@ -54,8 +54,8 @@
 			            <th>Zone</th>
 			            <th>Joining Date</th>
 			            <th>Mobile No.</th>
-			            <th> Delete </th>
 			            <th> Update </th>
+			            <th> Delete </th>
 			            <th></th>
 			        </tr>
                  </thead>
@@ -110,7 +110,14 @@
 								</a>
                         </td>
                         <td>
-                        	<a href="#">
+                        	<c:url value="DeleteEmp.jsp" var="empdelete">
+									<c:param name="id" value="${empid}"/>
+									<c:param name="username" value="${empusername}"/>
+									<c:param name="fname" value="${empfname}"/>
+									<c:param name="lname" value="${emplname}"/>
+									<c:param name="job" value="${empjob}"/>
+							</c:url>
+                        	<a href="${empdelete}">
                                 <span class="material-symbols-rounded" id="delete">delete</span>
                             </a>
                         </td>
