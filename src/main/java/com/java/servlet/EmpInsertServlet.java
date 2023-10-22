@@ -1,4 +1,4 @@
-package projectpackage1;
+package com.java.servlet;
 
 import java.io.IOException;
 
@@ -9,21 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class empInsert
- */
-@WebServlet("/empInsert")
-public class empInsert extends HttpServlet {
+@WebServlet("/EmpInsertServlet")
+public class EmpInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
-    public empInsert() {
+
+    public EmpInsertServlet() {
         super();
-        
+ 
     }
 
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		String fname = request.getParameter("first_name");
 		String lname = request.getParameter("last_name");
 		String dob = request.getParameter("DOB");
@@ -36,12 +32,15 @@ public class empInsert extends HttpServlet {
 		String join = request.getParameter("join_date");
 		String insure = request.getParameter("insure");
 		String zone = request.getParameter("zone");
+		String username = request.getParameter("user_name");
 		
 		boolean isTrue;
 		
-		isTrue = EmpDBUtil.insertEmp(fname, lname, dob, phone, gender, email, pwd, add, job, join, insure, zone);
+		isTrue = com.java.util.EmpDBUtil.insertEmp(fname, lname, dob, phone, gender, email, pwd, add, job, join, insure, zone, username);
 		
 		if(isTrue == true) {
+			
+			
 			RequestDispatcher dis = request.getRequestDispatcher("Employee.jsp");
 			dis.forward(request, response);
 		}else {

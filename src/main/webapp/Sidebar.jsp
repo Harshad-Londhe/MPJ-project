@@ -22,21 +22,21 @@
         </div>
         <ul>
             <li>
-                <a href="dashboard.html">
+                <a href="AdminDb.jsp">
                     <span class="material-symbols-rounded">grid_view</span>
                     <span class="nav_item">Dashboard</span>
                 </a>
                 <span class="tooltip">Dashboard</span>
             </li>
             <li>
-                <a href="employee.html">
+                <a href="Employee.jsp">
                     <span class="material-symbols-rounded">badge</span>
                     <span class="nav_item">Pharmasist</span>
                 </a>
                 <span class="tooltip">Pharmasist</span>
             </li>
             <li>
-                <a href="orderpanal.php">
+                <a href="#">
                     <span class="material-symbols-rounded">order_approve</span>
                     <span class="nav_item">Orders</span>
                 </a>

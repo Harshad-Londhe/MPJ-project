@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emp_form</title>
+    <title>Employee Dashboard</title>
 
     <!-- insert g-icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -19,100 +18,107 @@
 </head>
 <body>
 
-<h2>Add a new Employee</h2>
+<!---------------------------------------- SIDEBAR BEGINING ------------------------------------------>
+    <%@ include file="Sidebar.jsp" %>
+<!------------------------------------------- SIDEBAR END ------------------------------------------>
 
-<form action="insertform" method="post" class="userform">
+	<%
+		String id = request.getParameter("id");
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
+		String dob = request.getParameter("dob");
+		String phone = request.getParameter("phone");
+		String gender = request.getParameter("gender");
+		String email = request.getParameter("email");
+		String password = request.getParameter("pass");
+		String add = request.getParameter("add");
+		
+		String username = request.getParameter("username");
+		String job = request.getParameter("job");
+		String join = request.getParameter("join");
+		String insure = request.getParameter("insure");
+		String zone = request.getParameter("zone");
+	%>
+
+<form action="updatetform" method="post" class="userform">
 
     <div class="field">
 
         <span class="title">Personal Details</span>
 
-        <input type="hidden" name="em_id" value="">
+        <input type="hidden" name="em_id" value="<%=id%>">
 
             <p class="input-field-address">
                 <label for="">First Name:</label>
-                <input type="text" name="first_name" maxlength="50" required>
+                <input type="text" name="first_name" value="<%=fname%>" maxlength="50" required>
             </p>
 
             <p class="input-field-address">
                 <label for="">Last Name:</label>
-                <input type="text" name="last_name" maxlength="100" required>
+                <input type="text" name="last_name" value="<%=lname%>" maxlength="100" required>
             </p>
 
             <p class="input-field">
                 <label for="">birthday:</label>
-                <input type="date" name="DOB">
+                <input type="date" name="DOB" value="<%=dob%>" >
             </p>
 
             <p class="input-field">
                 <label for="">mobile_no:</label>
-                <input type="text" name="mobile_no" maxlength="10" required>
+                <input type="text" name="mobile_no" value="<%=phone%>"maxlength="10" required>
             </p>
 
-            <p class="input-field">
+             <p class="input-field">
                 <label for="">gender:</label>
-                <select name="gender" id="gender">
-				  <option value="male">male</option>
-				  <option value="female">female</option>
-				</select>
+                <input type="text" name="gender" value="<%=gender%>" maxlength="10" required>
             </p>
 
             <p class="input-field-address">
                 <label for="">Email Address:</label>
-                <input type="text" name="email" maxlength="100" required>
+                <input type="text" name="email" value="<%=email%>" maxlength="100" required>
             </p>
 
             <p class="input-field-address">
                 <label for="">New Password:</label>
-                <input type="password" name="password" maxlength="40" required>
+                <input type="password" name="password" value="<%=password%>" maxlength="40" required>
             </p>
 
             <p class="input-field-address">
                 <label for="">Address:</label>
-                <input type="text" name="address" maxlength="200" required>
+                <input type="text" name="address" value="<%=add%>" maxlength="200" required>
             </p>
 
         <span class="title">Working Details</span>
         
         	<p class="input-field-address">
                 <label for="">User Name:</label>
-                <input type="text" name="user_name" maxlength="8" required>
+                <input type="text" name="user_name" value="<%=username%>" maxlength="8" required>
             </p>
 
             <p class="input-field-address">
                 <label for="">Job title:</label>
-                <select name="title" id="title">
-				  <option value="deliver">Deliver</option>
-				  <option value="manager">Manager</option>
-				  <option value="driver">Driver</option>
-				</select>
+                <input type="text" name="title" value="<%=job%>" maxlength="100" required>
             </p>
 
             <p class="input-field-address">
                 <label for="">Join_date:</label>
-                <input type="date" name="join_date">
+                <input type="date" name="join_date" value="<%=join%>">
             </p>
 
             <p class="input-field-address">
                 <label for="">Insure:</label>
-                <select name="insure" id="insure">
-				  <option value="Y">Yes</option>
-				  <option value="N">No</option>
-				</select>
+                <input type="text" name="insure" value="<%=insure%>" maxlength="100" required>
             </p>
 
             <p class="input-field-address">
                 <label for="">Working Zone:</label>
-                <select name="zone" id="zone">
-				  <option value="in">In</option>
-				  <option value="out">Out</option>
-				</select>
-            </p>
+                <input type="text" name="zone" value="<%=zone%>" maxlength="20" required>
+            </p> 
 
 
             <div class="buttons">
                 <button type="submit" name="submit" class="submitbtn">
-                    <span class="btn-text">Submit</span>
+                    <span class="btn-text">Update Details</span>
                     <span class="material-symbols-rounded">arrow_outward</span>
                 </button>
 
@@ -130,10 +136,7 @@
 
     </div>  <!--inside form field class closing tag-->
         
-</div>	<!--popup closing tag-->		
-                   
-
-
+</div>	<!--popup closing tag-->
 
 </body>
 </html>

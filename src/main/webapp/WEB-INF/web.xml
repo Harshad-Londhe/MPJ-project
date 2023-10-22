@@ -90,13 +90,31 @@
 </servlet-mapping>
 
 <servlet>
-	<servlet-name>empInsert</servlet-name>
-	<servlet-class>projectpackage1.empInsert</servlet-class>
+	<servlet-name>EmpInsertServlet</servlet-name>
+	<servlet-class>com.java.servlet.EmpInsertServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>
-	<servlet-name>empInsert</servlet-name>
+	<servlet-name>EmpInsertServlet</servlet-name>
 	<url-pattern>/insertform</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>EmpUpdateServlet</servlet-name>
+	<servlet-class>com.java.servlet.EmpUpdateServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>EmpUpdateServlet</servlet-name>
+	<url-pattern>/updatetform</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>EmpDeleteServlet</servlet-name>
+	<servlet-class>com.java.servlet.EmpDeleteServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>EmpDeleteServlet</servlet-name>
+	<url-pattern>/deleteform</url-pattern>
 </servlet-mapping>
 
 
