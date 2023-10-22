@@ -21,3 +21,18 @@ function passwordMatch() {
     
 }
 cpassword.addEventListener("keyup", passwordMatch);
+
+
+function showpwd(){
+  
+  if(checkbox.checked == true){
+      password.type = "text";
+      cpassword.type = "text";
+  
+  }else{
+      password.type = "password";
+      cpassword.type = "password";
+  }
+}
+
+checkbox.addEventListener("click", showpwd);

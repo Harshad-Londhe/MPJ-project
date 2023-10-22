@@ -82,8 +82,8 @@ if (username == null) {
 													<c:param name="orderStatus"
 														value="${managerOrd.orderStatus}" />
 												</c:url>
-												<a href="${orderUpdate}"> <input type="button"
-													name="update" value="Change the order">
+												<a href="${orderUpdate}"> <input type="button" style="height: 25px; width: 65px; background:#1074d3; color: white; "
+													name="update" value="Change">
 												</a>
 											</c:when>
 
@@ -113,12 +113,10 @@ if (username == null) {
 						<br>
 
 						<!-- Submit Button -->
-						<input type="submit" value="Submit Order" name="submit">
+						<input type="submit" value="Submit Order" name="submit" style="background:#1074d3; color: white; ">
 					</form>
 
-					<form action="ManOrd" method="post">
-						<button type="submit" name="view">View</button>
-					</form>
+			
 
 				</div>
 			</div>

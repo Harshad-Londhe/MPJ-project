@@ -19,14 +19,14 @@
 				<input type="hidden" name="username"
 					value="<%=session.getAttribute("username")%>">
 				<button type="submit"
-					style="background: none; border: none; color: white; font-size: 15px; cursor: pointer;">
+					style="background: none; border: none; color: white; font-size: 15px; cursor: pointer; margin: 10px 0px 0px 7px;">
 					<i class="fa fa-user" style="font-size: 25px;"></i> Manage Orders
 				</button>
 			</form>
 		</li>
 
 
-		<li><a href="manageEnquiry.php"><i class="material-icons"
+		<li><a href="#"><i class="material-icons"
 				style="font-size: 25px; color: white">question_answer</i>Manage
 				Enquiries</a></li>
 		<li id="logout"><a href="logout"><i class="fa fa-sign-out"
