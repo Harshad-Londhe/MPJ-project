@@ -30,7 +30,7 @@ if (cart_list != null) {
 <!DOCTYPE html>
 <html>
 <head>
-<%@include file="/includes/head.jsp"%>
+<%@include file="customer/includes/head.jsp"%>
 <title>E-Commerce Cart</title>
 <style type="text/css">
 
@@ -44,7 +44,7 @@ font-size: 25px;
 </style>
 </head>
 <body>
-	<%@include file="/includes/navbar.jsp"%>
+	<%@include file="customer/includes/navbar.jsp"%>
 
 	<div class="container my-3">
 		<div class="d-flex py-3"><h3>Total Price: $ ${(total>0)?dcf.format(total):0} </h3> <a class="mx-3 btn btn-primary" href="cart-check-out">Check Out</a></div>
@@ -87,6 +87,6 @@ font-size: 25px;
 		</table>
 	</div>
 
-	<%@include file="/includes/footer.jsp"%>
+	<%@include file="customer/includes/footer.jsp"%>
 </body>
 </html>
