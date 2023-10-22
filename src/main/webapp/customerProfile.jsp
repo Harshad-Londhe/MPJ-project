@@ -50,10 +50,10 @@
         <input type="tel" id="phone" name="phone" value=<%=user.getPhone()%> required>
         <br><br>
         <label for="password">Password:</label>
-        <input type="text" id="password" name="password" value=<%=user.getPwd()%> required>
+        <input type="password" id="password" name="password" value=<%=user.getPwd()%> required>
         <br><br>
         <label for="cpassword">Confirm Password:</label>
-        <input type="text" id="cpassword" name="cpassword" value=<%=user.getPwd()%> required>
+        <input type="password" id="cpassword" name="cpassword" value=<%=user.getPwd()%> required>
         <span id="err">Password does not matched</span>
         <input type="checkbox" id="checkbox"><span class="pwdtxt">Show Password</span>
         <br><br>
