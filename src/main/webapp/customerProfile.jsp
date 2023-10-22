@@ -55,7 +55,7 @@
         <input type="text" id="cpassword" name="cpassword" value=<%=user.getPwd()%> required>
         <span id="err">Password does not matched</span>
         <br><br>
-        <input type="submit" value="Update Profile">
+        <input type="submit" value="Update Profile" id="subbtn">
     </form>
     
     
