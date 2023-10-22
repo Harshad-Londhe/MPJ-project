@@ -332,6 +332,7 @@ body{
 .charts{
     display: grid;
     grid-template-columns: 1.4fr 10fr 1.5fr;
+    padding: 0px 30px;
     
 }
 
