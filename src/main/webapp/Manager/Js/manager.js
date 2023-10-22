@@ -1,5 +1,5 @@
 function confirmUpdate(name) {
-  var confirmed = confirm('Are you sure you want to update ' + name +  '\'s profile?');
+  var confirmed = confirm('Are you sure you want to update details of ' + name + '');
   if (!confirmed) {
     return false;
   }
@@ -46,9 +46,3 @@ function showpwd(){
 checkbox.addEventListener("click", showpwd);
 
 
-let actualBtn = document.getElementById('fileupload');
-let fileChosen = document.getElementById('file_chosen');
-
-actualBtn.addEventListener('change', function(){
-  fileChosen.textContent = this.files[0].name
-});

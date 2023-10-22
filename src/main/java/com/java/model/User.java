@@ -6,6 +6,9 @@ public class User {
 	private String email;
 	private String fname;
 	private String lname;
+	private String add;
+	private String gender;
+	private String dob;
 	private String phone;
 	private String pwd;
 	
@@ -13,13 +16,16 @@ public class User {
 		
 	}
 
-	public User(int id, String uname, String email, String fname, String lname, String phone, String pwd) {
+	public User(int id, String uname, String email, String fname, String lname, String add, String gender, String dob ,String phone, String pwd) {
 		//super();
 		this.id = id;
 		this.Uname = uname;
 		this.email = email;
 		this.fname = fname;
 		this.lname = lname;
+		this.add = add;
+		this.gender = gender;
+		this.dob = dob;
 		this.phone = phone;
 		this.pwd = pwd;
 	}
@@ -44,6 +50,18 @@ public class User {
 		return lname;
 	}
 
+	public String getAdd() {
+		return add;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
 	public String getPhone() {
 		return phone;
 	}
@@ -51,6 +69,7 @@ public class User {
 	public String getPwd() {
 		return pwd;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -71,6 +90,18 @@ public class User {
 		this.lname = lname;
 	}
 
+	public void setAdd(String add) {
+		this.add = add;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
@@ -78,5 +109,7 @@ public class User {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
+
+	
 
 }

@@ -7,8 +7,7 @@
         
     </div>
     <div class="user_name">
-        
-            
+          
     </div>
 
 </div>
