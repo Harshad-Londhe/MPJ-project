@@ -17,13 +17,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<%@include file="/includes/head.jsp"%>
+	<%@include file="customer/includes/head.jsp"%>
 	<meta charset="UTF-8">
 	<title>User Profile Update</title>
     <link rel="stylesheet" type="text/css" href="customer/cusProfile.css">
 </head>
 <body>
-	<%@include file="/includes/navbar.jsp"%>
+	<%@include file="customer/includes/navbar.jsp"%>
 
 	<h1>Welcome <%=username %></h1>
     <form action="cusProfileUpdServlet" method="post">
@@ -51,8 +51,16 @@
         <label for="password">Password:</label>
         <input type="text" id="password" name="password" value=<%=user.getPwd()%> required>
         <br><br>
+        <label for="cpassword">Password:</label>
+        <input type="text" id="cpassword" name="cpassword" value=<%=user.getPwd()%> required>
+        <span id="err">Password does not matched</span>
+        <br><br>
         <input type="submit" value="Update Profile">
     </form>
+    
+    
+    
+     <script src="customer/customer.js"></script>
 
 </body>
 </html>
