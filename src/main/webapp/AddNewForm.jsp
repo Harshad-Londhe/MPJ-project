@@ -85,6 +85,8 @@
 				  <option value="deliver">Deliver</option>
 				  <option value="manager">Manager</option>
 				  <option value="driver">Driver</option>
+				  <option value="supplier">Supplier</option>
+				  <option value="admin">Admin</option>
 				</select>
             </p>
 
