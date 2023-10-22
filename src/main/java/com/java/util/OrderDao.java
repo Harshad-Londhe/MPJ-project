@@ -11,6 +11,8 @@ import java.util.*;
 import com.java.model.Medicine;
 import com.java.model.Order;
 
+import projectpackage1.DBconnection;
+
 
 public class OrderDao {
 	
@@ -88,5 +90,24 @@ public class OrderDao {
             System.out.print(e.getMessage());
         }
         //return result;
+    }
+    
+    public int countOrd() {
+    	int count =0;
+		try {
+
+			query  = "select count(*) from omos.orders";
+			pst = this.con.prepareStatement(query);
+			rs  = pst.executeQuery();
+			
+			if(rs.next()) {
+				count =  rs.getInt(1);
+			}
+			
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		
+		return count;
     }
 }

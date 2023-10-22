@@ -10,6 +10,7 @@
 <%
 
 	String username = (String) session.getAttribute("username");
+
 	User user = UserDBUtil.getUser(username);
 
 %>
@@ -40,7 +41,7 @@
         <input type="text" id="lastName" name="lastName" value=<%=user.getLname()%> required>
         <br><br>
         <label for="address">Address:</label>
-        <textarea id="address" name="address" value=<%=user.getAdd()%> required></textarea>
+        <textarea rows="3" cols="20" id="address" name="address" required><%=user.getAdd()%></textarea>
         <br><br>
         <label for="dob">Date of Birth:</label>
         <input type="date" id="dob" name="dob" value=<%=user.getDob()%> required>
@@ -51,9 +52,10 @@
         <label for="password">Password:</label>
         <input type="text" id="password" name="password" value=<%=user.getPwd()%> required>
         <br><br>
-        <label for="cpassword">Password:</label>
+        <label for="cpassword">Confirm Password:</label>
         <input type="text" id="cpassword" name="cpassword" value=<%=user.getPwd()%> required>
         <span id="err">Password does not matched</span>
+        <input type="checkbox" id="checkbox"><span class="pwdtxt">Show Password</span>
         <br><br>
         <input type="submit" value="Update Profile" id="subbtn">
     </form>
