@@ -28,7 +28,7 @@ if (username == null) {
 	<header>
 		<div class="container">
 			<div class="logo">
-				<img src="Images/logo.png" alt="logo">
+				<img src="images/omos_logo.png" alt="logo">
 			</div>
 			<div class="headTopic">
 				<h1 id="mainHeading">OMOS</h1>
@@ -42,7 +42,7 @@ if (username == null) {
 	</div>
 
 	<div class="container">
-		<h1>View Orders</h1>
+		<h1>Welcome <%=username %></h1>
 
 		<center>
 			<div class="MainBoxes">
