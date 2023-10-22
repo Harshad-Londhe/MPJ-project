@@ -7,7 +7,7 @@ function confirmUpdate(name) {
 
 
 function confirmDelete() {
-  var confirmed = confirm('Are you sure you want to delete this profile?');
+  var confirmed = confirm('Are you sure you want to delete this medicine?');
   if (!confirmed) {
     return false;
   }

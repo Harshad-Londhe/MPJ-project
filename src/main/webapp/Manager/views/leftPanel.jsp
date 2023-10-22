@@ -4,7 +4,7 @@
 
 <div class="left_panel">
 	<div class="logo">
-		<img src="../main/images/favpng_ferry-ship-boat-tour.png" alt="logo">
+		<img src="images/omos_logo.png" alt="logo">
 	</div>
 
 	<ul>

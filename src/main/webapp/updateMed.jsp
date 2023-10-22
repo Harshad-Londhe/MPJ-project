@@ -86,11 +86,9 @@
                     <div class="profile">
 
                         <div class="pImg">
+                              
                             
-                            
-                            <span>this is the image</span>
-                            
-                            <!-- <img src="uploads/profile logo.png" alt="profile"> -->
+                            <img src="images/medicine.jpeg" alt="image">
                         </div>
 
                         <div class="details">
