@@ -13,23 +13,6 @@ function confirmDelete() {
   }
 }
 
-let password = document.getElementById("pwd");
-let cpassword = document.getElementById("cpwd");
-let errorMSG = document.getElementById("err");
-let checkbox = document.getElementById("checkbox");
-
-function passwordMatch() {
-  if(password.value !== cpassword.value) {
-    // console.log("Passwords do not match");
-    errorMSG.style.display = "block";
-  }else{
-    // console.log("Passwords match");
-    errorMSG.style.display = "none";
-  }
-    
-}
-cpassword.addEventListener("keyup", passwordMatch);
-
 
 function showpwd(){
   

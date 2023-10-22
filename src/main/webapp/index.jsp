@@ -22,11 +22,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@include file="/includes/head.jsp"%>
+<%@include file="customer/includes/head.jsp"%>
 <title>E-Commerce Cart</title>
 </head>
 <body>
-	<%@include file="includes/navbar.jsp"%>
+	<%@include file="customer/includes/navbar.jsp"%>
 
 	<div class="container">
 		<div class="card-header my-3">All Products</div>
@@ -60,6 +60,6 @@
 		</div>
 	</div>
 
-	<%@include file="/includes/footer.jsp"%>
+	<%@include file="customer/includes/footer.jsp"%>
 </body>
 </html>
