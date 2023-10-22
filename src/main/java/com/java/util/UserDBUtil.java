@@ -45,7 +45,7 @@ public static boolean validate(String username, String password, String userType
 			}
 			
 			else {
-				String sql = "SELECT * FROM emp_table WHERE username='"+username+"' AND pwd='"+password+"' AND job='"+userType+"'";
+				String sql = "SELECT * FROM emp WHERE username='"+username+"' AND pwd='"+password+"' AND job='"+userType+"'";
 				rs = stmt.executeQuery(sql);
 				
 				if(rs.next()) {
