@@ -12,6 +12,7 @@
 	    response.sendRedirect("login.jsp");
 	}
 	
+	
 	List<Medicine> medicines = MedicineDBUtil.getMedicineDeteials();
 	ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
 	if (cart_list != null) {
@@ -25,7 +26,7 @@
 <title>E-Commerce Cart</title>
 </head>
 <body>
-	<%@include file="/includes/navbar.jsp"%>
+	<%@include file="includes/navbar.jsp"%>
 
 	<div class="container">
 		<div class="card-header my-3">All Products</div>
@@ -36,7 +37,7 @@
 			%>
 			<div class="col-md-3 my-3">
 				<div class="card w-100">
-					<img class="card-img-top" src="product-image/<%=p.getId() %>"
+					<img class="card-img-top" src="images/medicine.jpeg"
 						alt="Card image cap">
 					<div class="card-body">
 						<h5 class="card-title"><%=p.getMedName() %></h5>

@@ -1,3 +1,8 @@
+<%@page import="projectpackage1.*"%>
+<%@page import="com.java.util.*"%>
+<%@page import="com.java.model.*"%>
+<%@page import="java.util.*"%>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 	<div class="container">
 		<a class="navbar-brand" href="index.jsp">E-Commerce Cart</a>
@@ -13,9 +18,12 @@
 				<li class="nav-item"><a class="nav-link" href="index.jsp">Home</a></li>
 				<li class="nav-item"><a class="nav-link" href="cart.jsp">Cart <span class="badge badge-danger">${cart_list.size()}</span> </a></li>
 				<%
+				
 				if (username != null) {
+					
+					
 				%>
-				<li class="nav-item"><a class="nav-link" href="orders.jsp">Profile</a></li>
+				<li class="nav-item"><a class="nav-link" href="customerProfile.jsp"><%=username%></a></li>
 				<li class="nav-item"><a class="nav-link" href="orders.jsp">Orders</a></li>
 				<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
 				<%

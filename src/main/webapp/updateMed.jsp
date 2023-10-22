@@ -97,11 +97,11 @@
                         
 
                             <div class="detBox">
-                                <p>First Name:<%=medid %></p>
+                                <p>Indication:<%=indi %></p>
                             </div>
 
                             <div class="detBox">
-                                <p>Medicine Code:<%=code %></p>
+                                <p>Medicine Name:<%=name %></p>
                             </div>
 
                             <div class="detBox">
@@ -136,7 +136,7 @@
                         <div class="namewrap">
                             <div class="fwrap">
                                 <label for="fname">Medicine Code</label><br>
-                                <input type="text" name="medcode" id="fname" value="<%=code %>" >
+                                <input type="text" name="medcode" id="fname" value="<%=code %>" readonly>
                             </div>
                             <div class="lwrap">
                             	<label for="lname">Medicine Name</label><br>
@@ -155,10 +155,8 @@
                             <label for="pwd">Manufacturer</label><br>
                             <input type="text" name="manuf" id="pwd" placeholder="Manufacturer" value="<%=manuf %>"><br>
                             
-                            <span id="err">Password does not matched</span>
-                            <input type="checkbox" id="checkbox"><span class="pwdtxt">Show Password</span>
                          
-                            <input type="submit" value="Update" id="sbt" name="submit" onclick="return confirmUpdate('<?php echo $row['fname']?>')"><br>
+                            <input type="submit" value="Update" id="sbt" name="submit" onclick="return confirmUpdate('<%= name %>')"><br>
 
                         </div>
                                   
@@ -175,7 +173,7 @@
 
 
     
-   <script src="/Manager/Js/manager.js"></script>
+   <script src="Manager/Js/manager.js"></script>
    <script>
         ScrollReveal({
             reset: true,

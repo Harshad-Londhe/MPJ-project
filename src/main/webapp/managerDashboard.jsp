@@ -1,5 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@page import="java.util.*"%> 
+<%@page import="com.java.model.Medicine"%> 
+<%@page import="projectpackage1.DBconnection"%>
+<%@page import="com.java.util.MedicineDBUtil"%>
+
+<% 
+
+	String username = (String) session.getAttribute("username");
+	int medCount = MedicineDBUtil.countMedi();
+
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +62,7 @@
             </div>
             
             <div class="greeting">
-                <p class="head">Welcome UserName</p>
+                <p class="head">Welcome <%=username %></p>
             </div>
             
             <div class="middle_panel">
@@ -57,23 +70,23 @@
                     
 
                     <div class="box">
-                        <h6>Total Bookings</h6>
-                        <p class="val"></p>
+                        <h6>Total Medicines</h6>
+                        <p class="val"><%=medCount %></p>
                         <p class="date"></p>
                     </div>
                     <div class="box">
                         
-                        <h6>Total Users</h6>
+                        <h6>Total eMPLOYEES</h6>
                         <p class="val"></p>
                         <p class="date"></p>
                     </div>
                     <div class="box">
-                        <h6>Safari Availables</h6>
+                        <h6>Total Orders</h6>
                         <p class="val"></p>
                         <p class="date"></p>
                     </div>
                     <div class="box">
-                        <h6>Total Boats</h6>
+                        <h6>Medicine Count</h6>
                         <p class="val"></p>
                         <p class="date"></p>
                     </div>

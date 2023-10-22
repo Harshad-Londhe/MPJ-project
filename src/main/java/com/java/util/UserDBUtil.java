@@ -92,7 +92,7 @@ public static boolean validate(String username, String password, String userType
 	}
 	
 	public static User getUser(String un) {
-		User user = new User();
+		User user = null;;
 		
 
 		try {
@@ -101,9 +101,19 @@ public static boolean validate(String username, String password, String userType
             pst.setString(1, un);
             rs = pst.executeQuery();
             if(rs.next()){
+            	int id = rs.getInt(1);
+            	String uname = rs.getString(2);
+            	String email = rs.getString(3);
+            	String fname = rs.getString(4);
+            	String lname = rs.getString(5);
+            	String address = rs.getString(6);
+            	String gender = rs.getString(7);
+            	String dob = rs.getString(8);
+            	String phone = rs.getString(9);
+            	String pwd = rs.getString(10);
             	
-            	user.setId(rs.getInt(1));
-            	user.setUname(rs.getString(2));
+
+            	user = new User(id, uname, email, fname, lname, address, gender, dob, phone, pwd);
             	
             }
         } catch (SQLException e) {
@@ -111,6 +121,32 @@ public static boolean validate(String username, String password, String userType
         }
 		
 		return user;
+	}
+	
+	public static boolean updateUser(String uname, String email, String fname, String lname, String address, String birthdate,String phone, String pwd) {
+		boolean isSuccess = false;
+		
+		try {
+			con = DBconnection.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "update omos.customer set userName = '"+uname+"', email = '"+email+"', fname = '"+fname+"', lname = '"+lname+"', address = '"+address+"', dob = '"+birthdate+"', phone = '"+phone+"', password = '"+pwd+"' where userName = '"+uname+"'" ;
+			
+			int rs = stmt.executeUpdate(sql);
+			
+			if(rs > 0) {
+				isSuccess = true;
+			}
+			else {
+				isSuccess = false;
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return isSuccess;
 	}
 	
 

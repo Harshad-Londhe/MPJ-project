@@ -13,8 +13,15 @@
 
 
 <%
-List<Medicine> medicines = MedicineDBUtil.getMedicineDeteials();
+	List<Medicine> medicines = MedicineDBUtil.getMedicineDeteials();
+	
+	String username = (String) session.getAttribute("username");
+	if (username == null) {
+	    response.sendRedirect("login.jsp");
+	}
 %>
+
+
 
 
 <!DOCTYPE html>
@@ -43,7 +50,8 @@ List<Medicine> medicines = MedicineDBUtil.getMedicineDeteials();
 <body>
     <div class="container">
 
-        <jsp:include page="/Manager/views/leftPanel.jsp"></jsp:include> 
+       <%-- <jsp:include page="/Manager/views/leftPanel.jsp"></jsp:include>  --%> 
+        <%@include file="Manager/views/leftPanel.jsp"%>
 
         <div class="right_panel">
 
@@ -52,7 +60,8 @@ List<Medicine> medicines = MedicineDBUtil.getMedicineDeteials();
                     <h6>Manage Medicines</h6>
                 </div>
 
-                <jsp:include page="/Manager/views/upperPanelRight.jsp"></jsp:include>
+               <%-- <jsp:include page="/Manager/views/upperPanelRight.jsp"></jsp:include> --%> 
+                 <%@include file="Manager/views/upperPanelRight.jsp"%>
 
             </div>
 
@@ -64,7 +73,6 @@ List<Medicine> medicines = MedicineDBUtil.getMedicineDeteials();
                         <div class="grid">
                             <table>
                                 <tr>
-                                    <th>Med ID</th>
                                     <th>Med Name</th>
                                     <th>Indication</th>
                                     <th>Quantity</th>
@@ -78,8 +86,7 @@ List<Medicine> medicines = MedicineDBUtil.getMedicineDeteials();
                                 %>
                                 
                                 <tr>
-			
-	                					<td><%=m.getMedCode() %></td>
+					
 	                					<td><%=m.getMedName() %></td>
 	                					<td><%=m.getIndication() %></td>
 	                					<td><%=m.getQty() %></td>
@@ -136,13 +143,9 @@ List<Medicine> medicines = MedicineDBUtil.getMedicineDeteials();
                           	<label for="pwd">price</label><br>
                             <input type="number" name="price" id="pwd" placeholder="Price" required><br>
                             <label for="pwd">Manufacturer</label><br>
-                            <input type="text" name="manuf" id="pwd" placeholder="Manufacturer" required><br>
-                            
-                            <span id="err">Password does not matched</span>
-                            <input type="checkbox" id="checkbox"><span class="pwdtxt">Show Password</span>
-                            
-                                
-                          <input type="submit" value="Create" id="sbt" name="submit"><br>
+                            <input type="text" name="manuf" id="pwd" placeholder="Manufacturer" required><br>                           
+   
+                          	<input type="submit" value="Create" id="sbt" name="submit"><br>
                         </div>
                                   
                     </form>
@@ -157,7 +160,7 @@ List<Medicine> medicines = MedicineDBUtil.getMedicineDeteials();
     </div>
 
     
-    <script src="/Manager/Js/manager.js"></script>
+    <script src="Manager/Js/manager.js"></script>
     <script>
         ScrollReveal({
             reset: true,
@@ -169,6 +172,8 @@ List<Medicine> medicines = MedicineDBUtil.getMedicineDeteials();
         ScrollReveal().reveal('.left_box', {delay: 200, origin: 'left'});
         ScrollReveal().reveal('.right_box', {delay: 200, origin: 'right'});
         ScrollReveal().reveal('.upper_box', {delay: 200, origin: 'top'});
+        
+        
         
     </script>
 </body>
