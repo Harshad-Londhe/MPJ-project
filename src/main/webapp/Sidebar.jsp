@@ -31,9 +31,9 @@
             <li>
                 <a href="Employee.jsp">
                     <span class="material-symbols-rounded">badge</span>
-                    <span class="nav_item">Pharmasist</span>
+                    <span class="nav_item">Employee</span>
                 </a>
-                <span class="tooltip">Pharmasist</span>
+                <span class="tooltip">Employee</span>
             </li>
             <li>
                 <a href="#">
