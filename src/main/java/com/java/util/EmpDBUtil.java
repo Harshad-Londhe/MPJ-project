@@ -6,7 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import projectpackage1.DBconnectThil;
+import projectpackage1.DBconnection;
 
 public class EmpDBUtil {
 	
@@ -20,7 +20,7 @@ public class EmpDBUtil {
 		
 		//create database connection
 		try {
-			con = DBconnectThil.getConnection();
+			con = DBconnection.getConnection();
 			stmt = con.createStatement();
 			
 			String sql = "insert into emp values(0, '"+fname+"', '"+lname+"', '"+dob+"', '"+phone+"', '"+gender+"', '"+email+"', '"+pwd+"', '"+add+"', '"+job+"', '"+join+"', '"+insure+"', '"+zone+"', '"+username+"')";
@@ -46,7 +46,7 @@ public class EmpDBUtil {
 		ArrayList<com.java.model.Employee> emp = new ArrayList<>();
 		
 		try {
-			con = DBconnectThil.getConnection();
+			con = DBconnection.getConnection();
 			stmt = con.createStatement();
 			
 			String sql = "select * from emp  ";
@@ -88,7 +88,7 @@ public class EmpDBUtil {
 		
 		//create database connection
 		try {
-			con = DBconnectThil.getConnection();
+			con = DBconnection.getConnection();
 			stmt = con.createStatement();
 			
 			String sql = "UPDATE emp SET fname = '"+fname+"', lname = '"+lname+"', dob = '"+dob+"', phone = '"+phone+"', gender = '"+gender+"', email = '"+email+"', pwd = '"+pwd+"', `add` = '"+add+"', job = '"+job+"', `join` = '"+join+"', insure = '"+insure+"', zone = '"+zone+"', username = '"+username+"' WHERE id = '"+id+"'";
@@ -114,7 +114,7 @@ public class EmpDBUtil {
 		
 		//create database connection
 		try {
-			con = DBconnectThil.getConnection();
+			con = DBconnection.getConnection();
 			stmt = con.createStatement();
 			
 			String sql = "DELETE FROM emp WHERE id = '"+id+"'";
