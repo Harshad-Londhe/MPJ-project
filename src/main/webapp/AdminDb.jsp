@@ -1,8 +1,13 @@
+<%@page import="com.java.util.EmpDBUtil"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+ <%String empcount = EmpDBUtil.countemp();%>
+ 
+ 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +28,8 @@
 <!------------------------------------------- SIDEBAR END ------------------------------------------>
 
  <!--------------------------- main contian beginning ------------------------->
+ 
+
 
  <div class="main-content">
 
@@ -32,7 +39,7 @@
 
         <!-- greetings -->
         <div class="greetings">
-            <h1 id="massage">good morning</h1>
+            <h1 id="massage"></h1>
         </div>
         <!-- greetings end -->
 
@@ -59,7 +66,7 @@
                 </div>
                     <div class="card-inner">
                         <p class="card-top">Employees</p>
-                        <p class="card-Qnt">02 Employees</p> <!--How many Sales-->
+                        <p class="card-Qnt"><%=empcount%> Employees</p> <!--How many Sales-->
                     </div>
                     <!-- <div class="progress">
                         <p class="card-Qnt">figur</p> 
@@ -89,6 +96,7 @@
             <div class="chart-card">
                 
                 
+                
             </div>
 
             
@@ -106,8 +114,19 @@
 
             <div class="main-card-r">
 
+				
 
                 <div class="card-r">
+                
+                		<div class="calendar_month">
+                                <span class="material-symbols-rounded">calendar_month</span>
+                            </div>
+                            <div class="card-inner">
+                                <p id="day"></p>
+                                <p class="card-Qnt" id="insertdate"></p> 
+
+                        </div>
+                		
                         <div class="calendar_month">
                             <span class="material-symbols-rounded">mail</span>
                         </div>
