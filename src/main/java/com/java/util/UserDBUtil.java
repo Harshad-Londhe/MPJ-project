@@ -149,5 +149,28 @@ public static boolean validate(String username, String password, String userType
 		return isSuccess;
 	}
 	
+	
+	public static int countCustomers() {
+		
+		int count = 0;
+		
+		try {
+			con = DBconnection.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "SELECT COUNT(*) FROM customer";
+			rs = stmt.executeQuery(sql);
+			
+			if (rs.next()) {
+	            count = rs.getInt(1);
+	            
+	        }
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+	
 
 }
