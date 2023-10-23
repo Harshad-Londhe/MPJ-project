@@ -16,6 +16,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
+    <style>
+    /* Styling for the buttons */
+    .button {
+        padding: 10px 20px;
+        background-color: #007bff; /* Change to your desired background color */
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 100px 0; /* Increased margin for spacing */
+        font-size: 18px;
+        transition: background-color 0.3s ease;
+        display: block; /* Set buttons to block-level elements for stacking */
+        text-align: right; /* Align the text within the buttons to the right */
+    }
+
+    /* Hover effect */
+    .button:hover {
+        background-color: #0056b3; /* Change to the desired hover color */
+    }
+</style>
+    
     <!-- Scroll reveal effect -->
     <script src="https://unpkg.com/scrollreveal"></script>
     
@@ -61,7 +82,7 @@
                                             <form action="ordSt" method="post">
                                                 <input type="hidden" name="orderId" value="${MordDetails.id}">
                                                 <input type="submit" name="action" value="Accepted" class="btn btn-success">
-                                                <input type="submit" name="action" value="Rejected" class="btn btn-danger">
+                                                <input type="submit" name="action" value="Rejected" class="btn btn-danger";>
                                             </form>
                                         </td>
                                     </tr>
@@ -70,7 +91,14 @@
                         </table>
                     </div>
                 </div>
+                <div class="right_box">
+    <a href="logout" class="button">Log Out</a>
+    <a href="SupplierHome.jsp" class="button">Back to Home</a>
+</div>
+
+			</div>
             </div>
+            
         </div>
     </div>
 </body>

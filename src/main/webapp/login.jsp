@@ -32,14 +32,16 @@
 				</div>
 			</td>
 
-            <td width="20%">
-                <div class="AlreadyAcc">
-                    <a href="Registration.jsp">Does not have an account?</a>
-                    <a href="Registration.jsp"><button class="RRB">Register</button></a>
-                </div>
-            </td>
-        </tr>
-    </table>
+			<td width="20%">
+				<div class="AlreadyAcc">
+					<a href="Registration.jsp">Does not have an account?</a>
+					<button class="RRB"
+						style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Register</button>
+
+				</div>
+			</td>
+		</tr>
+	</table>
 
 	<div class="Line">
 		<!-- Just to Take An empty NavBar -->
@@ -58,12 +60,10 @@
 					<option value="customer">Customer</option>
 					<option value="supplier">Supplier</option>
 					<option value="manager">Manager</option>
-				</select> <br>
-				<br> <label for="Uname"><b>User Name</b></label> <input
+				</select> <br> <br> <label for="Uname"><b>User Name</b></label> <input
 					type="text" placeholder="Enter User Name" name="Uname" id="Uname">
 
-				<br>
-				<br> <label for="psw"><b>Password</b></label> <input
+				<br> <br> <label for="psw"><b>Password</b></label> <input
 					type="password" placeholder="*********" id="psw" name="psw">
 
 				<input type="radio" name="pwview" id="view" value="view"
@@ -74,11 +74,12 @@
 				<br>
 
 				<div class="FormButtons">
-					<input type="submit" name="login" value="Login" id="login">
+					<input type="submit" name="login" value="Login" id="login"
+						style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">
+					<a href="login.jsp"><input type="button" value="Cancel"
+						id="cancel"
+						style="background-color: #f00; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;"></a>
 
-					<a href="HomePage1.html"><input type="button" value="Cancel"
-						id="cancel"></a> <a href="success.jsp"><input
-						type="button1" value="submit11" id="cancel1"></a>
 				</div>
 			</form>
 		</fieldset>
@@ -109,10 +110,9 @@
 				</td>
 
 				<td><a href="AboutUs.html">About Us</a></td>
-				<td><i class="fa-solid fa-phone"></i> +94704484574<br>
-				<br> <i class="fa-solid fa-envelope"></i> omos@info.lk <br>
-				<br> <i class="fa-solid fa-fax"></i> +94112123123 <br>
-				<br></td>
+				<td><i class="fa-solid fa-phone"></i> +94704484574<br> <br>
+					<i class="fa-solid fa-envelope"></i> omos@info.lk <br> <br>
+					<i class="fa-solid fa-fax"></i> +94112123123 <br> <br></td>
 				<td><i class="fa-solid fa-location-dot"></i> New,<br>SLIIT,<br>Malabe,<br>Sri
 					Lanka</td>
 				<td><a href="#"><i class="fa-brands fa-square-facebook"
@@ -121,9 +121,7 @@
 					<a href="#"><i class="fa-brands fa-square-instagram"
 						style="font-size: 30px;"></i></a> <a href="#"><i
 						class="fa-brands fa-linkedin" style="font-size: 30px;"></i></a> <br>
-				<br>
-				<br>
-				<br>
+					<br> <br> <br>
 					<div id="Cpyright">
 						<i class="fa-regular fa-copyright"></i>2023 All Rights Reserved
 					</div></td>
