@@ -2,14 +2,25 @@
     pageEncoding="UTF-8"%>
     
 <%@page import="java.util.*"%> 
-<%@page import="com.java.model.Medicine"%> 
+<%@page import="com.java.model.*"%> 
 <%@page import="projectpackage1.DBconnection"%>
-<%@page import="com.java.util.MedicineDBUtil"%>
+<%@page import="com.java.util.*"%>
 
 <% 
 
 	String username = (String) session.getAttribute("username");
+	if (username == null) {
+	    response.sendRedirect("login.jsp");
+	}
+
 	int medCount = MedicineDBUtil.countMedi();
+	String totEmp = EmpDBUtil.countemp();
+	
+	OrderDao ordCount = new OrderDao(DBconnection.getConnection());
+	int countOrd = ordCount.countOrd();
+	
+	List<Employee> emps = EmpDBUtil.getEmpDetails();
+	
 
 %>
 
@@ -76,13 +87,13 @@
                     </div>
                     <div class="box">
                         
-                        <h6>Total eMPLOYEES</h6>
-                        <p class="val"></p>
+                        <h6>Total Employees</h6>
+                        <p class="val"><%=totEmp %></p>
                         <p class="date"></p>
                     </div>
                     <div class="box">
                         <h6>Total Orders</h6>
-                        <p class="val"></p>
+                        <p class="val"><%=countOrd %></p>
                         <p class="date"></p>
                     </div>
                     <div class="box">
@@ -96,19 +107,41 @@
                     
                     <div class="left_box">
                         
-                        <h6>Safari Bookings</h6>
+                        <h6>Employees</h6>
 
                         <div class="grid">
 
                         
                             <table>
                                 <tr>
-                                    <th>Booking ID</th>
-                                    <th>Date</th>
-                                    <th>Customer</th>
-                                    <th>Trip</th>
+                                    <th>Emp ID</th>
+                                    <th>FirstName</th>
+                                    <th>Job</th>
+                                    <th>Zone</th>
 
                                 </tr>
+                                
+                                <%
+                               		if (!emps.isEmpty()) {
+                    					for (Employee m : emps) {
+                                %>
+                                
+                                <tr>
+					
+	                					<td><%=m.getId() %></td>
+	                					<td><%=m.getFanme() %></td>
+	                					<td><%=m.getJob() %></td>
+	                					<td><%=m.getZone() %></td>
+
+	                					
+	                                </tr>
+                                
+                                <%
+										}
+									} else {
+										out.println("There is no Employees");
+									}
+								%>
 
                             
                                 

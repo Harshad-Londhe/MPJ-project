@@ -41,7 +41,7 @@
 						alt="Card image cap">
 					<div class="card-body">
 						<h5 class="card-title"><%=p.getMedName() %></h5>
-						<h6 class="price">Price: $<%=p.getPrice() %></h6>
+						<h6 class="price">Price: RS.<%=p.getPrice() %></h6>
 						<h6 class="category">Category: <%=p.getManufacturer() %></h6>
 						<div class="mt-3 d-flex justify-content-between">
 							<a class="btn btn-dark" href="add-to-cart?id=<%=p.getId()%>">Add to Cart</a> <a

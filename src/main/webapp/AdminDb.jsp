@@ -9,6 +9,19 @@
  <%String countempDeliver = EmpDBUtil.countempDeliver();%>
  <%String countempSupp = EmpDBUtil.countempSupp();%>
  <%String countempDriver = EmpDBUtil.countempDriver();%>
+ <% 
+ 
+ 	String username = (String) session.getAttribute("username");
+ 
+ 	if (username == null) {
+	    response.sendRedirect("login.jsp");
+	}
+ 
+ 
+ 
+ 
+ 
+ %>
  
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

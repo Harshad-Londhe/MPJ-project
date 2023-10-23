@@ -36,13 +36,13 @@ public class OrderNowServlet extends HttpServlet {
 			User user = UserDBUtil.getUser(username);
 
             if (user != null) {
-                String productId = request.getParameter("id");
+                String medId = request.getParameter("id");
                 int productQuantity = Integer.parseInt(request.getParameter("quantity"));
                 if (productQuantity <= 0) {
                 	productQuantity = 1;
                 }
                 Order orderModel = new Order();
-                orderModel.setId(Integer.parseInt(productId));
+                orderModel.setId(Integer.parseInt(medId));
                 orderModel.setUid(user.getId());
                 orderModel.setQunatity(productQuantity);
                 orderModel.setDate(formatter.format(date));
@@ -53,7 +53,7 @@ public class OrderNowServlet extends HttpServlet {
                     ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");
                     if (cart_list != null) {
                         for (Cart c : cart_list) {
-                            if (c.getId() == Integer.parseInt(productId)) {
+                            if (c.getId() == Integer.parseInt(medId)) {
                                 cart_list.remove(cart_list.indexOf(c));
                                 break;
                             }
