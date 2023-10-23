@@ -16,6 +16,8 @@
 	int medCount = MedicineDBUtil.countMedi();
 	String totEmp = EmpDBUtil.countemp();
 	
+	int cusCount = UserDBUtil.countCustomers();
+	
 	OrderDao ordCount = new OrderDao(DBconnection.getConnection());
 	int countOrd = ordCount.countOrd();
 	
@@ -81,13 +83,13 @@
                     
 
                     <div class="box">
-                        <h6>Total Medicines</h6>
+                        <h6>Medicines Count</h6>
                         <p class="val"><%=medCount %></p>
                         <p class="date"></p>
                     </div>
                     <div class="box">
                         
-                        <h6>Total Employees</h6>
+                        <h6>Employees Count</h6>
                         <p class="val"><%=totEmp %></p>
                         <p class="date"></p>
                     </div>
@@ -97,8 +99,8 @@
                         <p class="date"></p>
                     </div>
                     <div class="box">
-                        <h6>Medicine Count</h6>
-                        <p class="val"></p>
+                        <h6>Customer Count</h6>
+                        <p class="val"><%=cusCount %></p>
                         <p class="date"></p>
                     </div>
                 </div>
