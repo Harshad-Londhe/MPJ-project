@@ -35,9 +35,10 @@
 			<td width="20%">
 				<div class="AlreadyAcc">
 					<a href="Registration.jsp">Does not have an account?</a>
+					<a href="Registration.jsp">
 					<button class="RRB"
 						style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Register</button>
-
+					</a>
 				</div>
 			</td>
 		</tr>
