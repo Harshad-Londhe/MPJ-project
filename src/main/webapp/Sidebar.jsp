@@ -1,23 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
- 
+ <% String un = (String) session.getAttribute("username"); %>
         
 <div class="sidebar">
         <div class="top">
             <div class="logo">
                 <!-- logo -->
-                <img src="images/logo1.png" alt="company_logo" class="logoimg">
-                <span>ABC Pharmacy</span>
+                <img src="images/omos_logo.png" alt="company_logo" class="logoimg">
+                <span>Omos Pharmacy</span>
             </div>
             <!-- menu btn -->
             <span class="material-symbols-rounded" id="btn">menu</span>
         </div>
         <div class="user">
-            <img src="images/userIMG.jpg" alt="user_pic" class="userimg">
+            <img src="images/profile logo.png" alt="user_pic" class="userimg">
             <div>
-                <p class="bold">my name here</p>
-                <p>my g-mail here</p>
+                <p class="bold"><%=un %></p>
+           
             </div>
         </div>
         <ul>
@@ -54,7 +54,7 @@
             </li>
         </ul>
         <div class="logout">
-            <a href="logout.php">
+            <a href="logout">
                 <span class="material-symbols-rounded">logout</span>
                 <span class="nav_item">Logout Now</span>
             </a>

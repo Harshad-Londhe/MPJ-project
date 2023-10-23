@@ -11,6 +11,8 @@ import java.util.*;
 import com.java.model.Medicine;
 import com.java.model.Order;
 
+import projectpackage1.DBconnection;
+
 
 public class OrderDao {
 	
@@ -30,7 +32,7 @@ public class OrderDao {
 	public boolean insertOrder(Order model) {
         boolean result = false;
         try {
-            query = "insert into omos.orders (p_id, u_id, o_quantity, o_date) values(?,?,?,?)";
+            query = "insert into omos.orders (m_id, u_id, o_quantity, o_date) values(?,?,?,?)";
             pst = this.con.prepareStatement(query);
             pst.setInt(1, model.getId());
             pst.setInt(2, model.getUid());
@@ -55,12 +57,12 @@ public class OrderDao {
             while (rs.next()) {
                 Order order = new Order();
                 //ProductDao productDao = new ProductDao(this.con);
-                int pId = rs.getInt("p_id");
+                int mId = rs.getInt("m_id");
                 
                 //Product product = productDao.getSingleProduct(pId);
-                Medicine medicine = MedicineDBUtil.getSingleProduct(pId);
+                Medicine medicine = MedicineDBUtil.getSingleProduct(mId);
                 order.setOrderId(rs.getInt("o_id"));
-                order.setId(pId);
+                order.setId(mId);
                 order.setMedName(medicine.getMedName());
                 order.setManufacturer(medicine.getManufacturer());
                 order.setPrice(medicine.getPrice()*rs.getInt("o_quantity"));
@@ -88,5 +90,24 @@ public class OrderDao {
             System.out.print(e.getMessage());
         }
         //return result;
+    }
+    
+    public int countOrd() {
+    	int count =0;
+		try {
+
+			query  = "select count(*) from omos.orders";
+			pst = this.con.prepareStatement(query);
+			rs  = pst.executeQuery();
+			
+			if(rs.next()) {
+				count =  rs.getInt(1);
+			}
+			
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		
+		return count;
     }
 }

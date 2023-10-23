@@ -22,7 +22,7 @@
 	<!-- Header section -->
 	<table width="100%">
 		<tr>
-			<td width="20%"><img src="Images/logo.png" alt="logo"
+			<td width="20%"><img src="images/omos_logo.png" alt="logo"
 				width="60%" height="60%" id="logo"></td>
 
 			<td width="50%">
@@ -35,8 +35,8 @@
 
 			<td width="20%">
 				<div class="AlreadyAcc">
-					<a href="LoginPage.html">Already have an account?</a> <a
-						href="LoginPage.html"><button class="LRB">Login</button></a>
+					<a href="login.jsp">Already have an account?</a> <a
+						href="login.jsp"><button class="LRB">Login</button></a>
 				</div>
 			</td>
 		</tr>
