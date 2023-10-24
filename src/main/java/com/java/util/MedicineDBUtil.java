@@ -17,15 +17,18 @@ import java.sql.PreparedStatement;
 public class MedicineDBUtil {
 		private static boolean isSuccess;
 		
+		//for db connection
 		private static Connection con = null;
 		private static Statement stmt = null;
 		private static ResultSet rs = null;
 		
+		// Method for adding new medicines
 		public static boolean addMed(String code, String name, String ind, int qty, String expD, int price, String manuf) {
 			
 			boolean isSuccess = false;
 			
 			try {
+				//for db connection
 				con = DBconnection.getConnection();
 				stmt = con.createStatement();
 				
@@ -49,12 +52,13 @@ public class MedicineDBUtil {
 			
 		}
 		
+		// Method for retrieving medicine details
 		public static List<Medicine> getMedicineDeteials(){
 			
 			ArrayList<Medicine> medDets = new ArrayList<>() ;
 			
 			try {
-				
+				//for db connection
 				con = DBconnection.getConnection();
 				stmt = con.createStatement();
 				
@@ -95,6 +99,7 @@ public class MedicineDBUtil {
 			List <Medicine> singleMed = new ArrayList<>();
 			
 			try {
+				//for db connection
 				con = DBconnection.getConnection();
 				stmt = con.createStatement();
 				
@@ -122,10 +127,11 @@ public class MedicineDBUtil {
 			return singleMed;
 		}
 		
-		
+		 // Method for updating medicine details
 		public static boolean updateMed(String code, String name, String ind, int qty, String expD, double price, String manuf) {
 			boolean isSuccess = false;
 			try {
+				//for db connection
 				con = DBconnection.getConnection();
 				stmt = con.createStatement();
 				
@@ -150,12 +156,13 @@ public class MedicineDBUtil {
 		}
 		
 
-		
+		// Method for deleting a medicine
 		public static boolean deleteMed(int id) {
 			
 			boolean isSuccess = false;
 			
 			try {
+				//for db connection
 				con = DBconnection.getConnection();
 				stmt = con.createStatement();
 				
