@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- insert css -->
     <link rel="stylesheet" href="./Admin_Thilina/css/style.css">
+    
+    <!---------------------- insert Javscript here ----------------------->
+    <script src="./Admin_Thilina/js/formvalidation.js"></script>
 
 
 </head>
@@ -63,7 +66,7 @@
                     <span class="material-symbols-rounded">arrow_outward</span>
                 </button>
 
-                <button href="#" class="cancel">
+                <button type="button" onclick="closeForm()" class="cancel">
                     <span class="btn-text">Cancel</span>
                     <span class="material-symbols-rounded">close</span>
                 </button>
