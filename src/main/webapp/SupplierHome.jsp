@@ -56,42 +56,46 @@ if (username == null) {
 		<br> <br>
 	</div>
 
+	<!-- Footer Begins -->
 	<footer>
-		<div class="container">
-			<table width="100%">
-				<tr class="footTable">
-					<th width="20%">ishibishi</th>
-					<th width="20%">gayashan</th>
-					<th width="20%">dinuvi</th>
-					<th width="20%">thilina</th>
-					<th width="20%">Follow Us On</th>
-				</tr>
-				<tr class="footTable">
-					<td>
-						<ul>
-							<li><a href="PPhomePage.php">ishibishi</a></li>
-							<li><a href="enter login details.php">gayashan</a></li>
-							<li><a href="makeClaim.php">dinuvi</a></li>
-							<li><a href="renewpolicy.php">thilina</a></li>
-						</ul>
-					</td>
-					<td><a href="AboutUs.html">About Us</a></td>
-					<td><i class="fa-solid fa-phone"></i> +94704484574<br> <br>
-						<i class="fa-solid fa-envelope"></i> omos@info.lk <br> <br>
-						<i class="fa-solid fa-fax"></i> +94112123123 <br> <br></td>
-					<td><i class="fa-solid fa-location-dot"></i> New,<br>SLIIT,<br>Malabe,<br>Sri
-						Lanka</td>
-					<td><a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-						<a href="#"><i class="fa-brands fa-square-twitter"></i></a> <a
-						href="#"><i class="fa-brands fa-square-instagram"></i></a> <a
-						href="#"><i class="fa-brands fa-linkedin"></i></a> <br> <br>
-						<br> <br>
-						<div id="Cpyright">
-							<i class="fa-regular fa-copyright"></i>2023 All Rights Reserved
-						</div></td>
-				</tr>
-			</table>
-		</div>
+		<table width="100%">
+			<tr class="footTable">
+				<th width="20%">Developers</th>
+				<th width="20%">More Details</th>
+				<th width="20%">Contact Us</th>
+				<th width="20%">Location</th>
+				<th width="20%">Follow Us On</th>
+			</tr>
+
+			<tr class="footTable">
+				<td>
+					<ul>
+						<li><a href="#">ishibishi</a></li>
+						<li><a href="#">gayashan</a></li>
+						<li><a href="#">dinuvi</a></li>
+						<li><a href="#">thilina</a></li>
+					</ul>
+				</td>
+
+				<td><a href="AboutUs.html">About Us</a></td>
+				<td><i class="fa-solid fa-phone"></i> +94704484574<br> <br>
+					<i class="fa-solid fa-envelope"></i> omos@info.lk <br> <br>
+					<i class="fa-solid fa-fax"></i> +94112123123 <br> <br></td>
+				<td><i class="fa-solid fa-location-dot"></i> New,<br>SLIIT,<br>Malabe,<br>Sri
+					Lanka</td>
+				<td><a href="#"><i class="fa-brands fa-square-facebook"
+						style="font-size: 30px;"></i></a> <a href="#"><i
+						class="fa-brands fa-square-twitter" style="font-size: 30px;"></i></a>
+					<a href="#"><i class="fa-brands fa-square-instagram"
+						style="font-size: 30px;"></i></a> <a href="#"><i
+						class="fa-brands fa-linkedin" style="font-size: 30px;"></i></a> <br>
+					<br> <br> <br>
+					<div id="Cpyright">
+						<i class="fa-regular fa-copyright"></i>2023 All Rights Reserved
+					</div></td>
+			</tr>
+		</table>
 	</footer>
+	<!-- Footer Ends -->
 </body>
 </html>

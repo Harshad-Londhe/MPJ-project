@@ -94,20 +94,20 @@
 	<footer>
 		<table width="100%">
 			<tr class="footTable">
-				<th width="20%">ishibishi</th>
-				<th width="20%">gayashan</th>
-				<th width="20%">dinuvi</th>
-				<th width="20%">thilina</th>
+				<th width="20%">Developers</th>
+				<th width="20%">More Details</th>
+				<th width="20%">Contact Us</th>
+				<th width="20%">Location</th>
 				<th width="20%">Follow Us On</th>
 			</tr>
 
 			<tr class="footTable">
 				<td>
 					<ul>
-						<li><a href="PPhomePage.php">ishibishi</a></li>
-						<li><a href="enter login details.php">gayashan</a></li>
-						<li><a href="makeClaim.php">dinuvi</a></li>
-						<li><a href="renewpolicy.php">thilina</a></li>
+						<li><a href="#">ishibishi</a></li>
+						<li><a href="#">gayashan</a></li>
+						<li><a href="#">dinuvi</a></li>
+						<li><a href="#">thilina</a></li>
 					</ul>
 				</td>
 
