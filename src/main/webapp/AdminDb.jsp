@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
 
+<!-- get values from functions  -->
  <%String empcount = EmpDBUtil.countemp();%>
  <%String countempDeliver = EmpDBUtil.countempDeliver();%>
  <%String countempSupp = EmpDBUtil.countempSupp();%>
@@ -12,7 +13,7 @@
  <%String countzone = EmpDBUtil.countZone();%>
  <%String countman = EmpDBUtil.countMan();%>
    
- 
+ <!--create sesion  -->
  <% 
  
  	String username = (String) session.getAttribute("username");
@@ -41,7 +42,7 @@
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
+          ['emps', 'values'],
           ['Deliver',     <%=countempDeliver%>],
           ['Supplier',      <%=countempSupp%>],
           ['Driver',  <%=countempDriver%>]
