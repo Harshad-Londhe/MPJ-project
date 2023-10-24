@@ -31,7 +31,7 @@ if (cart_list != null) {
 <html>
 <head>
 <%@include file="customer/includes/head.jsp"%>
-<title>E-Commerce Cart</title>
+<title>Cart</title>
 <style type="text/css">
 
 .table tbody td{
