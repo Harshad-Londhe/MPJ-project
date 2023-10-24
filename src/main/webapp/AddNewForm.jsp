@@ -15,13 +15,15 @@
     <!-- insert css -->
     <link rel="stylesheet" href="./Admin_Thilina/css/style.css">
 
+    <!---------------------- insert Javscript here ----------------------->
+    <script src="./Admin_Thilina/js/formvalidation.js"></script>
 
 </head>
 <body>
 
 <h2>Add a new Employee</h2>
 
-<form action="insertform" method="post" class="userform">
+<form onsubmit="return validate()" action="insertform" method="post" class="userform" id="myForm">
 
     <div class="field">
 
@@ -31,12 +33,12 @@
 
             <p class="input-field-address">
                 <label for="">First Name:</label>
-                <input type="text" name="first_name" maxlength="50" required>
+                <input type="text" name="first_name" maxlength="50">
             </p>
 
             <p class="input-field-address">
                 <label for="">Last Name:</label>
-                <input type="text" name="last_name" maxlength="100" required>
+                <input type="text" name="last_name" maxlength="100">
             </p>
 
             <p class="input-field">
@@ -46,7 +48,7 @@
 
             <p class="input-field">
                 <label for="">mobile_no:</label>
-                <input type="text" name="mobile_no" maxlength="10" required>
+                <input type="text" name="mobile_no" maxlength="10">
             </p>
 
             <p class="input-field">
@@ -59,24 +61,24 @@
 
             <p class="input-field-address">
                 <label for="">Email Address:</label>
-                <input type="text" name="email" maxlength="100" required>
+                <input type="text" name="email" maxlength="100">
             </p>
 
             <p class="input-field-address">
                 <label for="">New Password:</label>
-                <input type="password" name="password" maxlength="40" required>
+                <input type="password" name="password" maxlength="40">
             </p>
 
             <p class="input-field-address">
                 <label for="">Address:</label>
-                <input type="text" name="address" maxlength="200" required>
+                <input type="text" name="address" maxlength="200">
             </p>
 
         <span class="title">Working Details</span>
         
         	<p class="input-field-address">
                 <label for="">User Name:</label>
-                <input type="text" name="user_name" maxlength="8" required>
+                <input type="text" name="user_name" maxlength="8">
             </p>
 
             <p class="input-field-address">
@@ -118,7 +120,7 @@
                     <span class="material-symbols-rounded">arrow_outward</span>
                 </button>
 
-                <button href="#" class="cancel">
+                <button type="button" onclick="closeForm()" class="cancel">
                     <span class="btn-text">Cancel</span>
                     <span class="material-symbols-rounded">close</span>
                 </button>
@@ -134,6 +136,7 @@
         
 </div>	<!--popup closing tag-->		
                    
+
 
 
 
