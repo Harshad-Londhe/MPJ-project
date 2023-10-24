@@ -31,12 +31,12 @@ public class deleteMedServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		//taking the id and convert to a int
 		int id = Integer.parseInt(request.getParameter("id"));
-		
+		//call th deletmed function and stor the bool value in a bool variables
 		boolean isSuccess = MedicineDBUtil.deleteMed(id);
 		
-		if(isSuccess) {
+		if(isSuccess) {// if success redirect to the same page
 			response.sendRedirect("ManageMedicine.jsp");
 		}
 		

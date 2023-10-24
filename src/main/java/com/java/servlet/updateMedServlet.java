@@ -32,7 +32,7 @@ public class updateMedServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		//get parametrs from the updte form 
 		String medCode = request.getParameter("medcode");
 		String medName = request.getParameter("fname");
 		String indication = request.getParameter("ind");
@@ -42,6 +42,7 @@ public class updateMedServlet extends HttpServlet {
 		String manufacturer = request.getParameter("manuf");
 		
 		boolean isSuccess;
+		//calling the update med function
 		isSuccess = MedicineDBUtil.updateMed(medCode, medName, indication, qty, expDate, price, manufacturer);
 		
 		if(isSuccess== true) {

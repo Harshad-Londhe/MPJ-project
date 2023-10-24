@@ -25,7 +25,7 @@ public class addMedServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		
-		
+		//getting parameters that are passed from manageMedicine.jsp
 		String medCode = request.getParameter("medcode");
 		String medName = request.getParameter("fname");
 		String indication = request.getParameter("ind");
@@ -36,17 +36,16 @@ public class addMedServlet extends HttpServlet {
 		
 		
 		boolean isTrue;
-		
+		//storing return values in a bool variable
 		isTrue = MedicineDBUtil.addMed(medCode, medName, indication, qty, expDate, price, manufacturer);
 		
-		if(isTrue==true) {
+		if(isTrue==true) {//store the medincne list that fetch from the database
 			List <Medicine> med = MedicineDBUtil.getMedicineDeteials();
-			request.setAttribute("medDets", med);
-			RequestDispatcher dis = request.getRequestDispatcher("ManageMedicine.jsp");
+			RequestDispatcher dis = request.getRequestDispatcher("ManageMedicine.jsp");//relaod the page
 			dis.forward(request, response);
 		}
 		
-		else {
+		else {//if addmed function in meddbutil failt redirect to a unsuccess.jsp
 			RequestDispatcher dis2 = request.getRequestDispatcher("unsuccess.jsp");
 			dis2.forward(request, response);
 		}

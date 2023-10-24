@@ -93,7 +93,7 @@ public class MedicineDBUtil {
 			
 		}
 		
-		
+		//mthod to get a specific med details
 		public static List<Medicine> getMedicine(int id){
 			
 			List <Medicine> singleMed = new ArrayList<>();
@@ -267,6 +267,7 @@ public class MedicineDBUtil {
 	        return product;
 	    }
 		
+		//count all medicines
 		public static int countMedi() {
 			
 			int count =0;

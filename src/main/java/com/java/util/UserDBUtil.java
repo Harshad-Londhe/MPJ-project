@@ -99,6 +99,7 @@ public class UserDBUtil {
 		
 	}
 	
+	//get details of a spefic user to a user object
 	public static User getUser(String un) {
 		User user = null;;
 		
@@ -158,6 +159,7 @@ public class UserDBUtil {
 	}
 	
 	
+	//count all customers
 	public static int countCustomers() {
 		
 		int count = 0;

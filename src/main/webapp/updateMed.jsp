@@ -63,7 +63,7 @@
 	
 	<div class="container">
 
-        <jsp:include page="/Manager/views/leftPanel.jsp"></jsp:include> 
+        <jsp:include page="/Manager/views/leftPanel.jsp"></jsp:include> <%--including leftPanel in another jsp --%>
 
         <div class="right_panel">
 
@@ -72,7 +72,7 @@
                     <h6>View Medicine</h6>
                 </div>
 
-                <jsp:include page="/Manager/views/upperPanelRight.jsp"></jsp:include>
+                <jsp:include page="/Manager/views/upperPanelRight.jsp"></jsp:include><%--including upperPanelRight in another jsp --%>
 
             </div>
     
