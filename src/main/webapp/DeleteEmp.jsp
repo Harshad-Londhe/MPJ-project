@@ -17,7 +17,17 @@
     <!---------------------- insert Javscript here ----------------------->
     <script src="./Admin_Thilina/js/formvalidation.js"></script>
 
-
+ <% 
+ 
+ 	String username = (String) session.getAttribute("username");
+ 
+ 	if (username == null) {
+	    response.sendRedirect("login.jsp");
+	}
+ 
+ %>
+ 
+ 
 </head>
 <body>
 
