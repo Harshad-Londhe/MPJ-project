@@ -46,7 +46,7 @@
 		String password = request.getParameter("pass");
 		String add = request.getParameter("add");
 		
-		String username = request.getParameter("username");
+		String username1 = request.getParameter("username");
 		String job = request.getParameter("job");
 		String join = request.getParameter("join");
 		String insure = request.getParameter("insure");
@@ -105,7 +105,7 @@
         
         	<p class="input-field-address">
                 <label for="">User Name:</label>
-                <input type="text" name="user_name" value="<%=username%>" maxlength="8">
+                <input type="text" name="user_name" value="<%=username1%>" maxlength="8">
             </p>
 
             <p class="input-field-address">
