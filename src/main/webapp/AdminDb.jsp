@@ -17,10 +17,6 @@
 	    response.sendRedirect("login.jsp");
 	}
  
- 
- 
- 
- 
  %>
  
     <meta charset="UTF-8">
