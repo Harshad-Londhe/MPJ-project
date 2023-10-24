@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet {
                 dispatcher1.forward(request, response);
                 
             } else if (cus.equals(userType)) {
-            	RequestDispatcher dispatcher2 = request.getRequestDispatcher("index.jsp");
+            	RequestDispatcher dispatcher2 = request.getRequestDispatcher("CustomerHome.jsp");
                 dispatcher2.forward(request, response);
           
             } else if (sup.equals(userType)) {
