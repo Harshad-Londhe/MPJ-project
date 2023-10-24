@@ -9,6 +9,10 @@
  <%String countempDeliver = EmpDBUtil.countempDeliver();%>
  <%String countempSupp = EmpDBUtil.countempSupp();%>
  <%String countempDriver = EmpDBUtil.countempDriver();%>
+ <%String countzone = EmpDBUtil.countZone();%>
+ <%String countman = EmpDBUtil.countMan();%>
+   
+ 
  <% 
  
  	String username = (String) session.getAttribute("username");
@@ -89,8 +93,8 @@
                     <span class="material-symbols-rounded">insights</span>
                 </div>
                     <div class="card-inner">
-                        <p class="card-top">Lifetime Orders</p>
-                        <p class="card-Qnt">01 Orders</p> <!--How many Sales-->
+                        <p class="card-top">Current situation</p>
+                        <p class="card-Qnt"><%=countzone%> working</p> <!--How many Sales-->
                     </div>
                     <!-- <div class="progress">
                         <p class="card-Qnt">figur</p> 
@@ -115,8 +119,8 @@
                     <span class="material-symbols-rounded">grouped_bar_chart</span>
                 </div>
                     <div class="card-inner">
-                        <p class="card-top">Insights</p>
-                        <p class="card-Qnt">03 Sales Completed</p> <!--How many Sales-->
+                        <p class="card-top">Connection</p>
+                        <p class="card-Qnt"><%=countman%> Managers online</p> <!--How many Sales-->
                     </div>
                     <!-- <div class="progress">
                         <p class="card-Qnt">figur</p> 
