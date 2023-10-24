@@ -11,11 +11,12 @@ public class Medicine {
 	private double price;
 	private String manufacturer;
 	
+	//defualt constructor
 	public Medicine() {
 		
 	}
 	
-	
+	//overlaoded constructor
 	public Medicine(int id, String medCode, String medName, String indication, int qty, String expDate, double price,
 			String manufacturer) {
 		super();

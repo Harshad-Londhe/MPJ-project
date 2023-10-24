@@ -12,7 +12,7 @@
 
 
 
-<%
+<%//session setting
 	List<Medicine> medicines = MedicineDBUtil.getMedicineDeteials();
 	
 	String username = (String) session.getAttribute("username");
@@ -51,7 +51,7 @@
     <div class="container">
 
        <%-- <jsp:include page="/Manager/views/leftPanel.jsp"></jsp:include>  --%> 
-        <%@include file="Manager/views/leftPanel.jsp"%>
+        <%@include file="Manager/views/leftPanel.jsp"%><%--including leftpanel in another jsp --%>
 
         <div class="right_panel">
 
@@ -61,7 +61,7 @@
                 </div>
 
                <%-- <jsp:include page="/Manager/views/upperPanelRight.jsp"></jsp:include> --%> 
-                 <%@include file="Manager/views/upperPanelRight.jsp"%>
+                 <%@include file="Manager/views/upperPanelRight.jsp"%><%--including upperPanelRight in another jsp --%>
 
             </div>
 

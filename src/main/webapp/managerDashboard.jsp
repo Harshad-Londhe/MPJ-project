@@ -7,21 +7,21 @@
 <%@page import="com.java.util.*"%>
 
 <% 
-
+	//setting session
 	String username = (String) session.getAttribute("username");
 	if (username == null) {
 	    response.sendRedirect("login.jsp");
 	}
-
+	//store the med count ina  variobale
 	int medCount = MedicineDBUtil.countMedi();
-	String totEmp = EmpDBUtil.countemp();
+	String totEmp = EmpDBUtil.countemp();//store the emp count ina  variobale
 	
-	int cusCount = UserDBUtil.countCustomers();
+	int cusCount = UserDBUtil.countCustomers();//store the cutomer count ina  variobale
 	
-	OrderDao ordCount = new OrderDao(DBconnection.getConnection());
-	int countOrd = ordCount.countOrd();
+	OrderDao ordCount = new OrderDao(DBconnection.getConnection());//create new orderDao object and pass the connection as argu
+	int countOrd = ordCount.countOrd();//calling the countOrde function
 	
-	List<Employee> emps = EmpDBUtil.getEmpDetails();
+	List<Employee> emps = EmpDBUtil.getEmpDetails();//get the emp detils and store ina  list
 	
 
 %>
@@ -59,7 +59,7 @@
 
  
        <%-- <jsp:include page="/WEB-INF/views/leftPanel.jsp"></jsp:include>  --%> 
-        <jsp:include page="/Manager/views/leftPanel.jsp"></jsp:include> 
+        <jsp:include page="/Manager/views/leftPanel.jsp"></jsp:include> <%--including leftpanel in another jsp --%>
 
         <div class="right_panel">
 
@@ -70,7 +70,7 @@
                 </div>
 
             
-            <jsp:include page="/Manager/views/upperPanelRight.jsp"></jsp:include>
+            <jsp:include page="/Manager/views/upperPanelRight.jsp"></jsp:include><%--including upperPanelRight in another jsp --%>
 
             </div>
             
