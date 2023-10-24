@@ -18,18 +18,14 @@
 				<li class="nav-item"><a class="nav-link" href="CustomerHome.jsp">Home</a></li>
 				<li class="nav-item"><a class="nav-link" href="cart.jsp">Cart <span class="badge badge-danger">${cart_list.size()}</span> </a></li>
 				<%
-				
-				if (username != null) {
+				String un = (String) session.getAttribute("username");
+				if (un != null) {
 					
 					
 				%>
-				<li class="nav-item"><a class="nav-link" href="customerProfile.jsp"><%=username%></a></li>
+				<li class="nav-item"><a class="nav-link" href="customerProfile.jsp"><%=un%></a></li>
 				<li class="nav-item"><a class="nav-link" href="orders.jsp">Orders</a></li>
 				<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
-				<%
-				} else {
-				%>
-				<li class="nav-item"><a class="nav-link" href="login.jsp">Login</a></li>
 				<%
 				}
 				%>
