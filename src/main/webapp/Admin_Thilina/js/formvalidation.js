@@ -9,8 +9,11 @@
         var mobile_no = document.getElementsByName("mobile_no")[0];
         var email = document.getElementsByName("email")[0];
         var password = document.getElementsByName("password")[0];
+        var password2 = document.getElementsByName("password2")[0];
         var address = document.getElementsByName("address")[0];
         var user_name = document.getElementsByName("user_name")[0];
+        
+        var phoneNumber = mobile_no.value;
 
         // Remove red borders from all fields initially
         first_name.style.border = "";
@@ -57,6 +60,16 @@
             user_name.style.border = "2px solid red";
             isValid = false;
         }
+        
+        if (phoneNumber.length !==10) {
+            alert("Please enter a valid 10-digit phone number.");
+            return false;
+        }
+        
+        if (password.value !== password2.value){
+			alert("Password does not match");
+			return false;
+		}
 
         if (isValid) {
             return true; // Form is valid
