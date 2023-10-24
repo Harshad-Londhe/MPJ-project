@@ -33,7 +33,7 @@
 <html>
 <head>
 <%@include file="customer/includes/head.jsp"%>
-<title>E-Commerce Cart</title>
+<title>Orders</title>
 </head>
 <body>
 	<%@include file="customer/includes/navbar.jsp"%>
