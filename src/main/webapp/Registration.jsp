@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!-- Registration Page -->
-<!-- Coded by IT22603586 Aponso G.I.A -->
 
 <!DOCTYPE html>
 <html>
@@ -51,7 +49,7 @@
 
 	<!-- Registration Form Begins -->
 	<fieldset>
-		<form method="post" action="reg">
+		<form method="post" action="reg"> <!-- redirect to RegisterServlet -->
 			<label for="Uname"><b>User Name</b></label> <input type="text"
 				placeholder="Enter User Name" name="Uname" id="Uname" required>
 

@@ -40,11 +40,6 @@ public class ManagerOrderServlet extends HttpServlet {
 			List<ManagerOrder> mOrderDetails = ManagerOrderDBUtil.getMOrder(managerId);
 			request.setAttribute("mOrderDetails", mOrderDetails);
 			
-			if (request.getParameter("view") != null) {
-	            RequestDispatcher dispatcher = request.getRequestDispatcher("manageOrders.jsp");
-	            dispatcher.forward(request, response);
-	        }
-			
 			RequestDispatcher dis = request.getRequestDispatcher("manageOrders.jsp");
 			dis.forward(request, response);
 			

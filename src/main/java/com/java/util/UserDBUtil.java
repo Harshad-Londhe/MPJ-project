@@ -2,16 +2,16 @@ package com.java.util;
 
 import java.sql.Connection;
 
-import java.sql.DriverManager;
+//import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+//import java.sql.Statement;
+//import java.util.ArrayList;
+//import java.util.List;
 
-import javax.servlet.http.HttpSession;
+//import javax.servlet.http.HttpSession;
 
 import com.java.model.User;
 
@@ -22,16 +22,20 @@ public class UserDBUtil {
 	
 	private static boolean isSuccess;
 	
+	//for DB connection
 	private static Connection con = null;
 	private static Statement stmt = null;
 	private static ResultSet rs = null;
 	
-public static boolean validate(String username, String password, String userType) {
+	// Method for validating user credentials (used in LoginServlet)
+	public static boolean validate(String username, String password, String userType) {
 		
 		try {
+			//DB connection
 			con = DBconnection.getConnection();
 			stmt = con.createStatement();
 			
+			//retrive from customer table to validate customers
 			if("customer".equals(userType)) {
 				String sql = "SELECT * FROM  customer  WHERE userName='"+username+"' AND password='"+password+"'";
 				rs = stmt.executeQuery(sql);
@@ -45,6 +49,7 @@ public static boolean validate(String username, String password, String userType
 			}
 			
 			else {
+				//retrive from emp table to validate all Employees
 				String sql = "SELECT * FROM emp WHERE username='"+username+"' AND pwd='"+password+"' AND job='"+userType+"'";
 				rs = stmt.executeQuery(sql);
 				
@@ -63,14 +68,17 @@ public static boolean validate(String username, String password, String userType
 		return isSuccess;
 	}
 	
+	// Method for creating a new user (used in RegisterServlet)
 	public static boolean createUser(String uname, String email, String fname, String lname, String address, String gender, String birthdate,String phone, String pwd) {
 		
 		boolean isSuccess = false;
 		
 		try {
+			//DB connection
 			con = DBconnection.getConnection();
 			stmt = con.createStatement();
 			
+			//inserting new customer records to customer table
 			String sql = "INSERT INTO customer VALUES(0,'"+uname+"','"+email+"', '"+fname+"', '"+lname+"', '"+address+"', '"+gender+"', '"+birthdate+"', '"+phone+"', '"+pwd+"')";
 			
 			int rs = stmt.executeUpdate(sql);
