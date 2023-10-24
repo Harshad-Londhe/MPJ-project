@@ -221,5 +221,50 @@ public class EmpDBUtil {
 		}
 		return rst;
 	}
+	
+	
+	public static String countZone() {
+		
+		String rst = null;
+		
+		try {
+			con = DBconnection.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "SELECT COUNT(*) FROM emp where zone = 'in'";
+			rs = stmt.executeQuery(sql);
+			
+			if (rs.next()) {
+	            int count = rs.getInt(1); // Assuming COUNT(*) is in the first column
+	            rst = String.valueOf(count); // Convert the count to a String
+	        }
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return rst;
+	}
+	
+	public static String countMan() {
+		
+		String rst = null;
+		
+		try {
+			con = DBconnection.getConnection();
+			stmt = con.createStatement();
+			
+			String sql = "SELECT COUNT(*) FROM emp where job = 'manager'";
+			rs = stmt.executeQuery(sql);
+			
+			if (rs.next()) {
+	            int count = rs.getInt(1); // Assuming COUNT(*) is in the first column
+	            rst = String.valueOf(count); // Convert the count to a String
+	        }
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return rst;
+	}
 
 }
