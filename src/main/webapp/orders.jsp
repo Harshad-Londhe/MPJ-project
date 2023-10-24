@@ -17,9 +17,9 @@
 	if (username != null) {
 	    //request.setAttribute("person", auth);
 	    OrderDao orderDao  = new OrderDao(DBconnection.getConnection());
-	    User user = UserDBUtil.getUser(username);
-		orders = orderDao.userOrders(user.getId());
-		//sessio eken id eka gattanm hari
+	    User user = UserDBUtil.getUser(username);//passsing the user id to a user object
+		orders = orderDao.userOrders(user.getId());// using the user obejct in UserOder methd
+		
 	}else{
 		response.sendRedirect("login.jsp");
 	}

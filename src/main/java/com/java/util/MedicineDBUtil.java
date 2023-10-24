@@ -236,7 +236,7 @@ public class MedicineDBUtil {
 
 		
 		public static List<Cart> getCartProducts(ArrayList<Cart> cartList) {
-	        List<Cart> book = new ArrayList<>();
+	        List<Cart> product = new ArrayList<>();
 	        try {
 	            if (cartList.size() > 0) {
 	                for (Cart item : cartList) {
@@ -254,7 +254,7 @@ public class MedicineDBUtil {
 	                        row.setManufacturer(rs.getString("Manufacturer"));
 	                        row.setPrice(rs.getDouble("price")*item.getQuantity());
 	                        row.setQuantity(item.getQuantity());
-	                        book.add(row);
+	                        product.add(row);
 	                    }
 
 	                }
@@ -264,7 +264,7 @@ public class MedicineDBUtil {
 	            e.printStackTrace();
 	            System.out.println(e.getMessage());
 	        }
-	        return book;
+	        return product;
 	    }
 		
 		public static int countMedi() {
