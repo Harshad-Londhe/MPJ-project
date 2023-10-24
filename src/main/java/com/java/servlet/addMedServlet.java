@@ -21,18 +21,7 @@ import com.java.util.ManagerOrderDBUtil;
 @WebServlet("/addMedServlet")
 public class addMedServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List <Medicine> med = MedicineDBUtil.getMedicineDeteials();
-		request.setAttribute("medDets", med);
-		RequestDispatcher dis = request.getRequestDispatcher("ManageMedicine.jsp");
-		dis.forward(request, response);
-		
-		
-	}
-	
-	
-
-       
+      
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		
