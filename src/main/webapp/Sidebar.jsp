@@ -36,13 +36,13 @@
                 <span class="tooltip">Employee</span>
             </li>
             <li>
-                <a href="#">
-                    <span class="material-symbols-rounded">order_approve</span>
-                    <span class="nav_item">Orders</span>
+                <a href="AddNewForm.jsp">
+                    <span class="material-symbols-rounded">person_add</span>
+                    <span class="nav_item">Add new</span>
                 </a>
-                <span class="tooltip">Orders</span>
+                <span class="tooltip">Add+</span>
             </li>
-            <li>
+<!--             <li>
                 <a href="#">
                     <span class="material-symbols-rounded">local_shipping</span>
                     <span class="nav_item">Deliver</span>
@@ -50,7 +50,7 @@
                 <span class="tooltip">Deliver</span>
             </li>
             <li>
-                
+                 -->
             </li>
         </ul>
         <div class="logout">

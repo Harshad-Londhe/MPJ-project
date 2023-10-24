@@ -13,8 +13,21 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- insert css -->
     <link rel="stylesheet" href="./Admin_Thilina/css/style.css">
+    
+    <!---------------------- insert Javscript here ----------------------->
+    <script src="./Admin_Thilina/js/formvalidation.js"></script>
 
-
+ <% 
+ 
+ 	String username = (String) session.getAttribute("username");
+ 
+ 	if (username == null) {
+	    response.sendRedirect("login.jsp");
+	}
+ 
+ %>
+ 
+ 
 </head>
 <body>
 
@@ -25,7 +38,7 @@
 <!------------------------------------------- SIDEBAR END ------------------------------------------>
 
 <%  String id = request.getParameter("id");
-	String username = request.getParameter("username");
+	String username1 = request.getParameter("username");
 	String fname = request.getParameter("fname");
 	String lname = request.getParameter("lname");
 	String job = request.getParameter("job");
@@ -44,7 +57,7 @@
             
             <p class="input-field-address">
                 <label for="">User Name:</label>
-                <input type="text" name="user_name" value="<%=username%>" maxlength="8" readonly>
+                <input type="text" name="user_name" value="<%=username1%>" maxlength="8" readonly>
             </p>
             
             <p class="input-field-address">
@@ -63,7 +76,7 @@
                     <span class="material-symbols-rounded">arrow_outward</span>
                 </button>
 
-                <button href="#" class="cancel">
+                <button type="button" onclick="closeForm()" class="cancel">
                     <span class="btn-text">Cancel</span>
                     <span class="material-symbols-rounded">close</span>
                 </button>

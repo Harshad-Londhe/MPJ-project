@@ -13,6 +13,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!-- insert css -->
     <link rel="stylesheet" href="./Admin_Thilina/css/style.css">
+    
+    <!---------------------- insert Javscript here ----------------------->
+    <script src="./Admin_Thilina/js/formvalidation.js"></script>
+
+ <% 
+ 
+ 	String username = (String) session.getAttribute("username");
+ 
+ 	if (username == null) {
+	    response.sendRedirect("login.jsp");
+	}
+ 
+ %>
 
 
 </head>
@@ -33,14 +46,14 @@
 		String password = request.getParameter("pass");
 		String add = request.getParameter("add");
 		
-		String username = request.getParameter("username");
+		String username1 = request.getParameter("username");
 		String job = request.getParameter("job");
 		String join = request.getParameter("join");
 		String insure = request.getParameter("insure");
 		String zone = request.getParameter("zone");
 	%>
 
-<form action="updatetform" method="post" class="userform">
+<form onsubmit="return validate()" action="updatetform" method="post" class="userform">
 
     <div class="field">
 
@@ -50,12 +63,12 @@
 
             <p class="input-field-address">
                 <label for="">First Name:</label>
-                <input type="text" name="first_name" value="<%=fname%>" maxlength="50" required>
+                <input type="text" name="first_name" value="<%=fname%>" maxlength="50">
             </p>
 
             <p class="input-field-address">
                 <label for="">Last Name:</label>
-                <input type="text" name="last_name" value="<%=lname%>" maxlength="100" required>
+                <input type="text" name="last_name" value="<%=lname%>" maxlength="100">
             </p>
 
             <p class="input-field">
@@ -65,39 +78,39 @@
 
             <p class="input-field">
                 <label for="">mobile_no:</label>
-                <input type="text" name="mobile_no" value="<%=phone%>"maxlength="10" required>
+                <input type="text" name="mobile_no" value="<%=phone%>"maxlength="10">
             </p>
 
              <p class="input-field">
                 <label for="">gender:</label>
-                <input type="text" name="gender" value="<%=gender%>" maxlength="10" required>
+                <input type="text" name="gender" value="<%=gender%>" maxlength="10">
             </p>
 
             <p class="input-field-address">
                 <label for="">Email Address:</label>
-                <input type="text" name="email" value="<%=email%>" maxlength="100" required>
+                <input type="text" name="email" value="<%=email%>" maxlength="100">
             </p>
 
             <p class="input-field-address">
                 <label for="">New Password:</label>
-                <input type="password" name="password" value="<%=password%>" maxlength="40" required>
+                <input type="password" name="password" value="<%=password%>" maxlength="40">
             </p>
 
             <p class="input-field-address">
                 <label for="">Address:</label>
-                <input type="text" name="address" value="<%=add%>" maxlength="200" required>
+                <input type="text" name="address" value="<%=add%>" maxlength="200">
             </p>
 
         <span class="title">Working Details</span>
         
         	<p class="input-field-address">
                 <label for="">User Name:</label>
-                <input type="text" name="user_name" value="<%=username%>" maxlength="8" required>
+                <input type="text" name="user_name" value="<%=username1%>" maxlength="8">
             </p>
 
             <p class="input-field-address">
                 <label for="">Job title:</label>
-                <input type="text" name="title" value="<%=job%>" maxlength="100" required>
+                <input type="text" name="title" value="<%=job%>" maxlength="100" >
             </p>
 
             <p class="input-field-address">
@@ -107,12 +120,12 @@
 
             <p class="input-field-address">
                 <label for="">Insure:</label>
-                <input type="text" name="insure" value="<%=insure%>" maxlength="100" required>
+                <input type="text" name="insure" value="<%=insure%>" maxlength="100" >
             </p>
 
             <p class="input-field-address">
                 <label for="">Working Zone:</label>
-                <input type="text" name="zone" value="<%=zone%>" maxlength="20" required>
+                <input type="text" name="zone" value="<%=zone%>" maxlength="20" >
             </p> 
 
 
@@ -122,7 +135,7 @@
                     <span class="material-symbols-rounded">arrow_outward</span>
                 </button>
 
-                <button href="#" class="cancel">
+                <button type="button" onclick="closeForm()" class="cancel">
                     <span class="btn-text">Cancel</span>
                     <span class="material-symbols-rounded">close</span>
                 </button>
