@@ -38,7 +38,7 @@
 <!------------------------------------------- SIDEBAR END ------------------------------------------>
 
 <%  String id = request.getParameter("id");
-	String username = request.getParameter("username");
+	String username1 = request.getParameter("username");
 	String fname = request.getParameter("fname");
 	String lname = request.getParameter("lname");
 	String job = request.getParameter("job");
@@ -57,7 +57,7 @@
             
             <p class="input-field-address">
                 <label for="">User Name:</label>
-                <input type="text" name="user_name" value="<%=username%>" maxlength="8" readonly>
+                <input type="text" name="user_name" value="<%=username1%>" maxlength="8" readonly>
             </p>
             
             <p class="input-field-address">
