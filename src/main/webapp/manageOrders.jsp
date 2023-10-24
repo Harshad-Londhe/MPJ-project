@@ -98,7 +98,7 @@ if (username == null) {
 
 				<div class="right_box">
 					<p>Place the Order</p>
-					<form action="ManOrd" method="post">
+					<form action="ManOrd" method="post"> <!-- redirect to the ManagerOrderServlet -->
 						<!-- Item Details -->
 						<label for="item_name">Item with Quantity:</label>
 						<textarea id="itemAndqty" name="itemAndqty" rows="10" cols="50"

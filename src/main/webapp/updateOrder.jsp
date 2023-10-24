@@ -34,7 +34,7 @@ if (username == null) {
 	<h1>Update Order</h1>
 
 
-	<form action="updMOrd" method="post">
+	<form action="updMOrd" method="post"> <!-- redirect to UpdateManagerOrderServlet -->
 		<table>
 			<tr>
 				<td>Order ID</td>
@@ -71,7 +71,7 @@ if (username == null) {
 	<br>
 	<br>
 
-	<form action="delMOrd" method="post">
+	<form action="delMOrd" method="post"> <!-- redirect to DeleteOrderServlet -->
 		<input type="hidden" name="id" value="<%=id%>"> <input
 			type="hidden" name="managerID" value="<%=managerID%>"> <input
 			type="submit" name="submit" value="Delete Order">

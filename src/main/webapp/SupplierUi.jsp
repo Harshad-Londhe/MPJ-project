@@ -20,20 +20,20 @@
     /* Styling for the buttons */
     .button {
         padding: 10px 20px;
-        background-color: #007bff; /* Change to your desired background color */
+        background-color: #007bff;
         color: white;
         text-decoration: none;
         border-radius: 5px;
-        margin: 100px 0; /* Increased margin for spacing */
+        margin: 100px 0;
         font-size: 18px;
         transition: background-color 0.3s ease;
-        display: block; /* Set buttons to block-level elements for stacking */
-        text-align: right; /* Align the text within the buttons to the right */
+        display: block;
+        text-align: right; 
     }
 
     /* Hover effect */
     .button:hover {
-        background-color: #0056b3; /* Change to the desired hover color */
+        background-color: #0056b3;
     }
 </style>
     
@@ -79,10 +79,10 @@
                                         <td>${MordDetails.itemDesc}</td>
                                         <td>${MordDetails.orderStatus}</td>
                                         <td>
-                                            <form action="ordSt" method="post">
+                                            <form action="ordSt" method="post"> <!-- redirect to UpdateOrderStatusServlet-->
                                                 <input type="hidden" name="orderId" value="${MordDetails.id}">
-                                                <input type="submit" name="action" value="Accepted" class="btn btn-success">
-                                                <input type="submit" name="action" value="Rejected" class="btn btn-danger";>
+                                                <input type="submit" name="action" value="Accepted" class="btn btn-success" style="height: 25px; width: 65px; background:#1074d3; color: white; ">
+                                                <input type="submit" name="action" value="Rejected" class="btn btn-danger" style="height: 25px; width: 65px; background:#1074d3; color: white; ">
                                             </form>
                                         </td>
                                     </tr>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <div class="right_box">
-    <a href="logout" class="button">Log Out</a>
+    <a href="logout" class="button">Log Out</a> <!--redirect to LogoutServlet-->
     <a href="SupplierHome.jsp" class="button">Back to Home</a>
 </div>
 

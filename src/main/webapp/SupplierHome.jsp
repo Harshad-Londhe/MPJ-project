@@ -46,7 +46,7 @@ if (username == null) {
 
 		<center>
 			<div class="MainBoxes">
-				<form action="supp" method="post" class="MainBoxes">
+				<form action="supp" method="post" class="MainBoxes"> <!-- redirect to SupplierServlet -->
 					<button type="submit" class="btn btn-primary">My Orders</button>
 				</form>
 

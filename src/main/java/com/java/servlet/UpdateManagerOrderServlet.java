@@ -1,6 +1,8 @@
 package com.java.servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -22,23 +24,22 @@ public class UpdateManagerOrderServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		String managerID = request.getParameter("managerID");
-		String orderDate = request.getParameter("orderDate");
+		//String orderDate = request.getParameter("orderDate");
 		String itemAndqty = request.getParameter("itemAndqty");
 		String itemDesc = request.getParameter("itemDesc");
-		String orderStatus = request.getParameter("orderStatus");
+		//String orderStatus = request.getParameter("orderStatus");
+		
+		Date currentDate = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String FcurrentDate = dateFormat.format(currentDate);
 		
 		boolean isTrue;
 		
-		isTrue = ManagerOrderDBUtil.updateOrder(id, itemAndqty, itemDesc);
+		isTrue = ManagerOrderDBUtil.updateOrder(id, itemAndqty, itemDesc, FcurrentDate);
 		
 		if(isTrue == true) {
 			List<ManagerOrder> mOrderDetails = ManagerOrderDBUtil.getMOrder(managerID);
 			request.setAttribute("mOrderDetails", mOrderDetails);
-			
-			if (request.getParameter("view") != null) {
-	            RequestDispatcher dispatcher = request.getRequestDispatcher("manageOrders.jsp");
-	            dispatcher.forward(request, response);
-	        }
 			
 			RequestDispatcher dis = request.getRequestDispatcher("manageOrders.jsp");
 			dis.forward(request, response);

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!-- Registration Page -->
-<!-- Coded by IT22603586 Aponso G.I.A -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,10 +20,9 @@
 	<!-- Header section -->
 	<table width="100%">
 		<tr>
-		<!--  	<td width="20%"><img src="images/omos_logo.png" alt="logo"
-				width="60%" height="60%" id="logo"></td>-->
-				
-			<td width="20%"><video autoplay muted loop src="images/omos_logo.mp4" width="60%" height="60%" id="logo"></video></td>
+
+			<td width="20%"><video autoplay muted loop
+					src="images/omos_logo.mp4" width="60%" height="60%" id="logo"></video></td>
 
 			<td width="50%">
 				<div class="headTopic">
@@ -36,10 +34,10 @@
 
 			<td width="20%">
 				<div class="AlreadyAcc">
-					<a href="Registration.jsp">Does not have an account?</a>
-					<a href="Registration.jsp">
-					<button class="RRB"
-						style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Register</button>
+					<a href="Registration.jsp">Does not have an account?</a> <a
+						href="Registration.jsp">
+						<button class="RRB"
+							style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;">Register</button>
 					</a>
 				</div>
 			</td>
@@ -58,6 +56,7 @@
 	<div id="LForm">
 		<fieldset>
 			<form method="POST" action="log">
+				<!-- this will redirect to the  LoginServlet-->
 				<label for="userType">User Type:</label> <select name="userType">
 					<option value="admin">Admin</option>
 					<option value="customer">Customer</option>
