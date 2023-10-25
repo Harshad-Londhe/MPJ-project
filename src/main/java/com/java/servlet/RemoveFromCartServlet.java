@@ -20,12 +20,12 @@ public class RemoveFromCartServlet extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		try (PrintWriter out = response.getWriter()) {
-			String bookId = request.getParameter("id");
-			if (bookId != null) {
+			String productId = request.getParameter("id");
+			if (productId != null) {
 				ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");
 				if (cart_list != null) {
 					for (Cart c : cart_list) {
-						if (c.getId() == Integer.parseInt(bookId)) {
+						if (c.getId() == Integer.parseInt(productId)) {
 							cart_list.remove(cart_list.indexOf(c));
 							break;
 						}

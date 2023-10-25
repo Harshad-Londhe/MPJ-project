@@ -31,6 +31,7 @@
 	<div class="container">
 		<div class="card-header my-3">All Products</div>
 		<div class="row">
+		
 			<%
 			if (!medicines.isEmpty()) {
 				for (Medicine p : medicines) {
