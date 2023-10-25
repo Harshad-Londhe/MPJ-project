@@ -18,6 +18,7 @@
     <!---------------------- insert Javscript here ----------------------->
     <script src="./Admin_Thilina/js/formvalidation.js"></script>
     
+    <!--session create  -->
      <% 
  
 	 	String username = (String) session.getAttribute("username");
@@ -58,7 +59,7 @@
 
             <p class="input-field">
                 <label for="">mobile_no:</label>
-                <input type="text" name="mobile_no" maxlength="10">
+                <input type="number" name="mobile_no" maxlength="10">
             </p>
 
             <p class="input-field">
@@ -82,6 +83,11 @@
             <p class="input-field-address">
                 <label for="">Address:</label>
                 <input type="text" name="address" maxlength="200">
+            </p>
+            
+            <p class="input-field-address">
+                <label for="">Re Enter Password:</label>
+                <input type="password" name="password2" maxlength="40">
             </p>
 
         <span class="title">Working Details</span>
