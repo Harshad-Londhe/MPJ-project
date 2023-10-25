@@ -25,6 +25,7 @@ public class QuantityIncDecServlet extends HttpServlet {
 			ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");
 
 			if (action != null && id >= 1) {
+				//increment quantity
 				if (action.equals("inc")) {
 					for (Cart c : cart_list) {
 						if (c.getId() == id) {
@@ -36,6 +37,7 @@ public class QuantityIncDecServlet extends HttpServlet {
 					}
 				}
 
+				//decrement quantity
 				if (action.equals("dec")) {
 					for (Cart c : cart_list) {
 						if (c.getId() == id && c.getQuantity() > 1) {

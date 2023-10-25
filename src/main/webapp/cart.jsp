@@ -6,6 +6,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%
+//Display total with two decimals
 DecimalFormat dcf = new DecimalFormat("#.##");
 request.setAttribute("dcf", dcf);
 /*User auth = (User) request.getSession().getAttribute("auth");
@@ -17,6 +18,7 @@ String username = (String) session.getAttribute("username");
 if (username == null) {
     response.sendRedirect("login.jsp");
 }
+//cart details
 ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
 List<Cart> cartProduct = null;
 if (cart_list != null) {
