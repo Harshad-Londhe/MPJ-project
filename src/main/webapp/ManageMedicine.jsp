@@ -139,13 +139,13 @@
                             <label for="cNo">Quantity</label><br>
                             <input type="number" name="qty" id="cNo" placeholder="Quantity"><br>
                             <label for="pwd">Expire Date</label><br>
-                            <input type="text" name="exp" id="pwd" placeholder="Expiry Date" required><br>
+                            <input type="text" name="exp" id="pwd" placeholder="Expiry Date" required oninput="validateDate()"><br>
                           	<label for="pwd">price</label><br>
                             <input type="number" name="price" id="pwd" placeholder="Price" required><br>
                             <label for="pwd">Manufacturer</label><br>
                             <input type="text" name="manuf" id="pwd" placeholder="Manufacturer" required><br>                           
    
-                          	<input type="submit" value="Create" id="sbt" name="submit"><br>
+                          	<input type="submit" value="Create" id="sbt" name="submit" disabled><br>
                         </div>
                                   
                     </form>
