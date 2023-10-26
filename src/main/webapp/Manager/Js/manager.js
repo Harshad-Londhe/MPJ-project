@@ -14,7 +14,7 @@ function confirmDelete() {
 }
 
 function validateDate() {
-	var dateInput = document.getElementById("exp");
+	var dateInput = document.getElementByCgetElementsByClassName("exp");
 	var submitButton = document.getElementById("submit");
 
 	var dateValue = dateInput.value;
