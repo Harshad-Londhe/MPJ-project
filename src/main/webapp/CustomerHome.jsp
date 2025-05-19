@@ -13,7 +13,7 @@
 	}
 	
 	
-	List<Medicine> medicines = MedicineDBUtil.getMedicineDeteials();
+	List<Medicine> medicines = MedicineDBUtil.getMedicineDetails();
 	ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
 	if (cart_list != null) {
 		request.setAttribute("cart_list", cart_list);
@@ -54,7 +54,7 @@
 			<%
 			}
 			} else {
-			out.println("There is no proucts");
+			out.println("There is no products");
 			}
 			%>
 

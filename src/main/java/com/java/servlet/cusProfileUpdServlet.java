@@ -46,7 +46,7 @@ public class cusProfileUpdServlet extends HttpServlet {
 		isTrue = UserDBUtil.updateUser(username, email, firstName, lastName, address, dob, phone, password);
 		
 		if(isTrue==true) {
-			List <Medicine> med = MedicineDBUtil.getMedicineDeteials();
+			List <Medicine> med = MedicineDBUtil.getMedicineDetails();
 			RequestDispatcher dis = request.getRequestDispatcher("customerProfile.jsp");
 			dis.forward(request, response);
 		}

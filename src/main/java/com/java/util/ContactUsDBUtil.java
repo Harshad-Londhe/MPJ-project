@@ -27,7 +27,7 @@ public class ContactUsDBUtil {
 				stmt = con.createStatement();
 				
 				//SQL query for inserting inquiries for the contactus table
-				String sql = "INSERT INTO contactus VALUES(0,'"+name+"', '"+email+"', '"+msg+"', '"+issue+"'";
+				String sql = "INSERT INTO contactus VALUES(0,'"+name+"', '"+email+"', '"+msg+"', '"+issue+"')";
 				
 				int rs = stmt.executeUpdate(sql);
 				

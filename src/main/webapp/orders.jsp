@@ -11,8 +11,24 @@
 	//User auth = (User) request.getSession().getAttribute("auth");
 	List<Order> orders = null;
 	//if(auth != null)
-		
-	String username = (String) session.getAttribute("username");
+	
+		String username = (String) session.getAttribute("username");
+		System.out.println("Username from session: " + username);
+
+if (username == null) {
+    response.sendRedirect("login.jsp");
+    return;
+}
+
+User user = UserDBUtil.getUser(username);
+if (user == null) {
+    out.println("<p style='color:red;'>User not found for username: " + username + "</p>");
+    return;
+}
+
+OrderDao orderDao = new OrderDao(DBconnection.getConnection());
+orders = orderDao.userOrders(user.getId());
+	/* String username = (String) session.getAttribute("username");
 	
 	if (username != null) {
 	    //request.setAttribute("person", auth);
@@ -22,7 +38,7 @@
 		
 	}else{
 		response.sendRedirect("login.jsp");
-	}
+	} */
 	ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
 	if (cart_list != null) {
 		request.setAttribute("cart_list", cart_list);

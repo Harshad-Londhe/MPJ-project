@@ -37,7 +37,7 @@ public class UserDBUtil {
 			
 			//retrive from customer table to validate customers
 			if("customer".equals(userType)) {
-				String sql = "SELECT * FROM  customer  WHERE userName='"+username+"' AND password='"+password+"'";
+				String sql = "SELECT * FROM  customer  WHERE uame='"+username+"' AND pwd='"+password+"'";
 				rs = stmt.executeQuery(sql);
 				
 				if(rs.next()) {
@@ -105,8 +105,9 @@ public class UserDBUtil {
 		
 
 		try {
-            String query = "select * from omos.customer where userName=?";
-            PreparedStatement pst = con.prepareStatement(query);
+			con = DBconnection.getConnection(); 
+	        String query = "select * from omos.customer where uname=?";
+	        PreparedStatement pst = con.prepareStatement(query);
             pst.setString(1, un);
             rs = pst.executeQuery();
             if(rs.next()){
@@ -139,7 +140,7 @@ public class UserDBUtil {
 			con = DBconnection.getConnection();
 			stmt = con.createStatement();
 			
-			String sql = "update omos.customer set userName = '"+uname+"', email = '"+email+"', fname = '"+fname+"', lname = '"+lname+"', address = '"+address+"', dob = '"+birthdate+"', phone = '"+phone+"', password = '"+pwd+"' where userName = '"+uname+"'" ;
+			String sql = "update omos.customer set uname = '"+uname+"', email = '"+email+"', fname = '"+fname+"', lname = '"+lname+"', address = '"+address+"', dob = '"+birthdate+"', phone = '"+phone+"', password = '"+pwd+"' where userName = '"+uname+"'" ;
 			
 			int rs = stmt.executeUpdate(sql);
 			

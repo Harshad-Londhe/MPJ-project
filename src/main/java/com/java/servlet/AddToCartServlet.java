@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.java.model.Cart;
+import com.java.util.CartDBUtil;
 
 
 
@@ -53,6 +54,44 @@ public class AddToCartServlet extends HttpServlet {
                     response.sendRedirect("CustomerHome.jsp");
                 }
             }
+//            ------------------------------------------------------------------------------
+//            if (cart_list == null) {
+//                cartList.add(cm);
+//                session.setAttribute("cart-list", cartList);
+//
+//                // ✅ Add to database
+//                CartDBUtil.insertCartItem(id, 1);
+//
+//                // Perform redirect before any output
+//                response.sendRedirect("CustomerHome.jsp");
+//                return;  // Exit the method after redirect
+//            } else {
+//                cartList = cart_list;
+//
+//                boolean exist = false;
+//                for (Cart c : cart_list) {
+//                    if (c.getId() == id) {
+//                        exist = true;
+//
+//                        // Redirect before printing the message
+//                        response.sendRedirect("cart.jsp");
+//                        return;  // Exit the method after redirect
+//                    }
+//                }
+//
+//                if (!exist) {
+//                    cartList.add(cm);
+//
+//                    // ✅ Add to database
+//                    CartDBUtil.insertCartItem(id, 1);
+//
+//                    // Perform redirect after adding item to the cart
+//                    response.sendRedirect("CustomerHome.jsp");
+//                    return;  // Exit the method after redirect
+//                }
+//            }
+//----------------------------
+
         }
 	}
 

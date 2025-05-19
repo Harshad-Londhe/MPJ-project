@@ -27,7 +27,7 @@ public class PaymentDBUtil {
 			stmt = con.createStatement();
 			
 			//SQL query for inserting inquiries for the contactus table
-			String sql = "INSERT INTO payment VALUES(0,'"+paymentMethod+"', '"+amount+"', '"+cardNo+"'";
+			String sql = "INSERT INTO payment VALUES(0,'"+paymentMethod+"', '"+amount+"', '"+cardNo+"')";
 			
 			int rs = stmt.executeUpdate(sql);
 			

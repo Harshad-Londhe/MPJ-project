@@ -24,36 +24,66 @@ public class MedicineDBUtil {
 		
 		// Method for adding new medicines
 		public static boolean addMed(String code, String name, String ind, int qty, String expD, int price, String manuf) {
-			
-			boolean isSuccess = false;
-			
-			try {
-				//for db connection
-				con = DBconnection.getConnection();
-				stmt = con.createStatement();
-				
-				String sql = "INSERT INTO omos.medicines VALUES(0,'"+code+"','"+name+"', '"+ind+"', '"+qty+"', '"+expD+"', '"+price+"', '"+manuf+"' )";
-				
-				int rs = stmt.executeUpdate(sql);
-				
-				if(rs > 0) {
-					isSuccess = true;
-				}
-				else {
-					isSuccess = false;
-				}
-				
-				
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-			
-			return isSuccess;
-			
+		    boolean isSuccess = false;
+		    Connection con = null;
+		    Statement stmt = null;
+
+		    try {
+		        // Step 1: Establish connection (DBconnection is your method to get the connection)
+		        con = DBconnection.getConnection();
+		        if (con == null) {
+		            System.out.println("Database connection failed");
+		            return false;
+		        }
+		        
+		        // Step 2: Create Statement object
+		        stmt = con.createStatement();
+
+		        // Step 3: Prepare the SQL query
+		        String sql = "INSERT INTO omos.medicines (code, name, ind, qty, expD, price, manuf) VALUES ('"
+		                     + code + "', '"
+		                     + name + "', '"
+		                     + ind + "', "
+		                     + qty + ", '"
+		                     + expD + "', "
+		                     + price + ", '"
+		                     + manuf + "')";
+
+		        // Log the SQL query for debugging
+		        System.out.println("Executing query: " + sql);
+
+		        // Step 4: Execute the query
+		        int rs = stmt.executeUpdate(sql);
+
+		        // Step 5: Check if the insert was successful
+		        if (rs > 0) {
+		            isSuccess = true;
+		        } else {
+		            System.out.println("No rows were inserted.");
+		        }
+		    } catch (SQLException e) {
+		        // Print SQL exception
+		        System.out.println("SQL Error: " + e.getMessage());
+		        e.printStackTrace();
+		    } catch (Exception e) {
+		        // Catch any other exceptions
+		        System.out.println("Error: " + e.getMessage());
+		        e.printStackTrace();
+		    } finally {
+		        // Close resources to avoid leaks
+		        try {
+		            if (stmt != null) stmt.close();
+		            if (con != null) con.close();
+		        } catch (SQLException e) {
+		            System.out.println("Error closing resources: " + e.getMessage());
+		        }
+		    }
+
+		    return isSuccess;
 		}
 		
 		// Method for retrieving medicine details
-		public static List<Medicine> getMedicineDeteials(){
+		public static List<Medicine> getMedicineDetails(){
 			
 			ArrayList<Medicine> medDets = new ArrayList<>() ;
 			
@@ -65,9 +95,10 @@ public class MedicineDBUtil {
 				String sql = "select * from omos.medicines";
 				
 				rs = stmt.executeQuery(sql);
-				
+				int counter =1;
 				while(rs.next()) {
-					int id= rs.getInt(1);
+//					int id= rs.getInt(1);
+					int id = counter++; 
 					String medCode = rs.getString(2);
 					String medName = rs.getString(3);
 					String indic = rs.getString(4);
@@ -187,6 +218,7 @@ public class MedicineDBUtil {
 		public static Medicine getSingleProduct(int id) {
 			 Medicine row = null;
 		        try {
+		        	con = DBconnection.getConnection();
 		            String sql = "select * from omos.medicines where id=? ";
 
 		            PreparedStatement pst = con.prepareStatement(sql);
@@ -250,8 +282,8 @@ public class MedicineDBUtil {
 	                    while (rs.next()) {
 	                        Cart row = new Cart();
 	                        row.setId(rs.getInt("id"));
-	                        row.setMedName(rs.getString("medName"));
-	                        row.setManufacturer(rs.getString("Manufacturer"));
+	                        row.setMedName(rs.getString("name"));
+	                        row.setManufacturer(rs.getString("manuf"));
 	                        row.setPrice(rs.getDouble("price")*item.getQuantity());
 	                        row.setQuantity(item.getQuantity());
 	                        product.add(row);

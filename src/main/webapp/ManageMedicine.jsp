@@ -13,7 +13,7 @@
 
 
 <%//session setting
-	List<Medicine> medicines = MedicineDBUtil.getMedicineDeteials();
+	List<Medicine> medicines = MedicineDBUtil.getMedicineDetails();
 	
 	String username = (String) session.getAttribute("username");
 	if (username == null) {

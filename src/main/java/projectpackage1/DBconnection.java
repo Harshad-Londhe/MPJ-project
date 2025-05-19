@@ -6,8 +6,8 @@ import java.sql.DriverManager;
 public class DBconnection {
 	
 	private static String url = "jdbc:mysql://localhost:3306/omos";
-	private static String user = "root";
-	private static String pass = "123";
+	private static String user = "sammy";
+	private static String pass = "password";
 	
 	private static Connection con;
 	

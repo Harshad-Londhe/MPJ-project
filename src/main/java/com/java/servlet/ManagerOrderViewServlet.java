@@ -24,6 +24,11 @@ public class ManagerOrderViewServlet extends HttpServlet {
 		List<ManagerOrder> mOrderDetails = ManagerOrderDBUtil.getMOrder(managerId);
 		request.setAttribute("mOrderDetails", mOrderDetails);
 		
+		System.out.println("Number of orders: " + mOrderDetails.size()); // Debugging statement
+		for (ManagerOrder order : mOrderDetails) {
+		    System.out.println("Order ID: " + order.getId() + ", Status: " + order.getOrderStatus());
+		}
+
 		RequestDispatcher dis = request.getRequestDispatcher("manageOrders.jsp");
 		dis.forward(request, response);
 	}

@@ -40,7 +40,7 @@ public class addMedServlet extends HttpServlet {
 		isTrue = MedicineDBUtil.addMed(medCode, medName, indication, qty, expDate, price, manufacturer);
 		
 		if(isTrue==true) {//store the medincne list that fetch from the database
-			List <Medicine> med = MedicineDBUtil.getMedicineDeteials();
+			List <Medicine> med = MedicineDBUtil.getMedicineDetails();
 			RequestDispatcher dis = request.getRequestDispatcher("ManageMedicine.jsp");//relaod the page
 			dis.forward(request, response);
 		}

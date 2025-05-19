@@ -70,19 +70,17 @@ if (username == null) {
 			<tr class="footTable">
 				<td>
 					<ul>
-						<li><a href="#">ishibishi</a></li>
-						<li><a href="#">gayashan</a></li>
-						<li><a href="#">dinuvi</a></li>
-						<li><a href="#">thilina</a></li>
+						<li><a href="#">Sudhanshu</a></li>
+						<li><a href="#">Harshad</a></li>
+						<li><a href="#">Shravani</a></li>
+						<li><a href="#">Siddhi</a></li>
 					</ul>
 				</td>
 
 				<td><a href="AboutUs.html">About Us</a></td>
-				<td><i class="fa-solid fa-phone"></i> +94704484574<br> <br>
+				<td><i class="fa-solid fa-phone"></i> +0123456789<br> <br>
 					<i class="fa-solid fa-envelope"></i> omos@info.lk <br> <br>
-					<i class="fa-solid fa-fax"></i> +94112123123 <br> <br></td>
-				<td><i class="fa-solid fa-location-dot"></i> New,<br>SLIIT,<br>Malabe,<br>Sri
-					Lanka</td>
+				<td><i class="fa-solid fa-location-dot"></i> Kothrud,<br>PUNE,<br>MH,<br>India</td>
 				<td><a href="#"><i class="fa-brands fa-square-facebook"
 						style="font-size: 30px;"></i></a> <a href="#"><i
 						class="fa-brands fa-square-twitter" style="font-size: 30px;"></i></a>
