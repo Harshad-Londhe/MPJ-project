@@ -163,7 +163,7 @@ select *from contactus;
 
 
 
-
+-- the below tabe need to complete
 -- Create Orders table
 CREATE TABLE Orders (
     order_id INT PRIMARY KEY AUTO_INCREMENT,
